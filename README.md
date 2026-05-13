@@ -31,7 +31,8 @@
 
 ###
 
-<p align="left">I'm Akrom, a Computer Science student from Indonesia passionate about software development and IT.<br><br>- 🔭 I’m exploring opportunities in software engineering and project development.<br>- 📚 I’m currently learning algorithms, web development, data structures, and fundamentals of Machine Learning.<br>- ⚡ In my free time I create mini-projects to practice what I’ve learned.</p>
+<p align="left">I'm Akrom, a Computer Science student from Indonesia passionate about software development and IT.<br><br>- 🔭 I’m currently working on personal growth and meaningful projects<br><br>👯 I’m looking to collaborate on creative and impactful ideas<br><br>🤝 I’m looking for help with learning new things and improving my craft<br><br>🌱 I’m currently learning technology, problem-solving, and better ways to build<br><br>💬 Ask me about learning, building, and exploring new ideas<br><br>⚡ Fun fact: I like creating things that are simple, useful, and thoughtful
+</p>
 
 ###
 
