@@ -31,7 +31,7 @@
 
 ###
 
-<p align="left">I'm Akrom, a Computer Science student from Indonesia passionate about software development and IT.<br><br>- 🔭 I’m currently working on personal growth and meaningful projects<br><br>👯 I’m looking to collaborate on creative and impactful ideas<br><br>🤝 I’m looking for help with learning new things and improving my craft<br><br>🌱 I’m currently learning technology, problem-solving, and better ways to build<br><br>💬 Ask me about learning, building, and exploring new ideas<br><br>⚡ Fun fact: I like creating things that are simple, useful, and thoughtful
+<p align="left">I'm Akrom, a Computer Science student from Indonesia passionate about software development and IT.<br><br> 🔭 I’m currently working on personal growth and meaningful projects<br><br>👯 I’m looking to collaborate on creative and impactful ideas<br><br>🤝 I’m looking for help with learning new things and improving my craft<br><br>🌱 I’m currently learning technology, problem-solving, and better ways to build<br><br>💬 Ask me about learning, building, and exploring new ideas<br><br>⚡ Fun fact: I like creating things that are simple, useful, and thoughtful
 </p>
 
 ###
@@ -126,8 +126,4 @@
 
 ###
 
-<div>
-  <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=header&reversal=false&fontSize=70&fontColor=FFFFFF&fontAlign=50&fontAlignY=50&stroke=-&descSize=20&descAlign=50&descAlignY=50&theme=cobalt"  />
-</div>
 
-###
