@@ -100,16 +100,16 @@
 <br clear="both">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Akromfadhil01/Akromfadhil01/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Akromfadhil01/Akromfadhil01/output/pacman-contribution-graph.svg">
-  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Akromfadhil01/Akromfadhil01/output/pacman-contribution-graph.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/output/pacman-contribution-graph.svg">
+  <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/output/pacman-contribution-graph.svg">
 </picture>
 
 ###
 
 <br clear="both">
 
-<img src="https://raw.githubusercontent.com/Akromfadhil01/Akromfadhil01/output/snake.svg" alt="Snake animation" />
+<img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/output/snake.svg" alt="Snake animation" />
 
 ###
 
