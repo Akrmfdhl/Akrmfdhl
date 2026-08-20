@@ -15,7 +15,7 @@
 ## 📈 Telemetry & Activity Stats
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=Akrmfdhl&locale=en&mode=daily&theme=radical&background=0B0F14&border=1E293B&stroke=10B981&ring=10B981&fire=10B981&currStreakNum=10B981&sideNums=E2E8F0&currStreakLabel=34D399&sideLabels=94A3B8&dates=64748B&hide_border=false" height="200" alt="Akrom's GitHub Streak" />
+  <img src="https://streak-stats.demolab.com?user=Akrmfdhl&theme=dark&hide_border=false&border_radius=8" height="200" alt="Akrom's GitHub Streak" />
 </div>
 
 <br/>
