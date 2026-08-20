@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/cyber-header.svg" alt="Akrom Fadhil - Profile Header" width="100%" />
+  <img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/main/assets/cyber-header.svg" alt="Akrom Fadhil - Profile Header" width="100%" />
 </div>
 
 <br/>
@@ -7,24 +7,15 @@
 ## 🛠️ Technical Arsenal & Engineering Capabilities
 
 <div align="center">
-  <img src="./assets/tech-matrix.svg" alt="Technical Arsenal Matrix" width="100%" />
+  <img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/main/assets/tech-matrix.svg" alt="Technical Arsenal Matrix" width="100%" />
 </div>
 
 <br/>
 
-## 📈 Telemetry & System Activity
+## 📈 Telemetry & Activity Stats
 
 <div align="center">
-  <table>
-    <tr>
-      <td width="50%" align="center" valign="middle">
-        <img src="https://streak-stats.demolab.com?user=Akrmfdhl&locale=en&mode=daily&theme=radical&background=0B0F14&border=1E293B&stroke=10B981&ring=10B981&fire=10B981&currStreakNum=10B981&sideNums=E2E8F0&currStreakLabel=34D399&sideLabels=94A3B8&dates=64748B&hide_border=false" alt="Akrom's GitHub Streak" width="100%" />
-      </td>
-      <td width="50%" align="center" valign="middle">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Akrmfdhl&layout=compact&theme=transparent&title_color=10B981&text_color=E2E8F0&icon_color=06B6D4&border_color=1E293B&bg_color=0B0F14&hide_border=false" alt="Top Languages" width="100%" />
-      </td>
-    </tr>
-  </table>
+  <img src="https://streak-stats.demolab.com?user=Akrmfdhl&locale=en&mode=daily&theme=radical&background=0B0F14&border=1E293B&stroke=10B981&ring=10B981&fire=10B981&currStreakNum=10B981&sideNums=E2E8F0&currStreakLabel=34D399&sideLabels=94A3B8&dates=64748B&hide_border=false" height="200" alt="Akrom's GitHub Streak" />
 </div>
 
 <br/>
@@ -66,5 +57,5 @@
 <br/>
 
 <div align="center">
-  <img src="./assets/terminal-footer.svg" alt="Engineering Manifesto" width="100%" />
+  <img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/main/assets/terminal-footer.svg" alt="Engineering Manifesto" width="100%" />
 </div>
