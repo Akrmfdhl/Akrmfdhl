@@ -1,88 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0B0F14" />
-      <stop offset="50%" stop-color="#0E1622" />
-      <stop offset="100%" stop-color="#080C10" />
+      <stop offset="100%" stop-color="#0D131B" />
     </linearGradient>
-    <linearGradient id="cyanEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#06B6D4" />
-      <stop offset="50%" stop-color="#10B981" />
-      <stop offset="100%" stop-color="#3B82F6" />
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#34D399" />
     </linearGradient>
     <linearGradient id="cardGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.85" />
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.5" />
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.4" />
     </linearGradient>
     <style>
-      @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.35; transform: scale(0.9); }
-      }
-      @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
       .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
       .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-      .live-dot { animation: pulse 2s infinite ease-in-out; transform-origin: 242px 76px; }
-      .cursor-blink { animation: blink 1s infinite step-start; }
     </style>
   </defs>
 
-  <rect width="900" height="280" rx="14" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="1.5" />
+  <rect width="900" height="240" rx="12" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="1.2" />
 
-  <path d="M 0 14 Q 0 0 14 0 L 886 0 Q 900 0 900 14 L 900 38 L 0 38 Z" fill="#111827" stroke="#1E293B" stroke-width="1" />
-  <circle cx="24" cy="19" r="5.5" fill="#EF4444" opacity="0.85" />
-  <circle cx="42" cy="19" r="5.5" fill="#F59E0B" opacity="0.85" />
-  <circle cx="60" cy="19" r="5.5" fill="#10B981" opacity="0.85" />
-  
-  <text x="450" y="24" text-anchor="middle" fill="#64748B" font-size="12" class="font-mono">akrom@core: ~/developer-profile</text>
-
-  <g transform="translate(32, 60)">
-    <text x="0" y="16" fill="#10B981" font-size="14" font-weight="600" class="font-mono">&gt; akrom@dev:~$</text>
-    <text x="130" y="16" fill="#F1F5F9" font-size="14" class="font-mono">whoami --stack --role</text>
-    <rect x="316" y="4" width="8" height="15" fill="#10B981" class="cursor-blink" />
-
-    <g transform="translate(560, 0)">
-      <rect x="0" y="-2" width="276" height="26" rx="13" fill="#064E3B" fill-opacity="0.4" stroke="#10B981" stroke-width="1" />
-      <circle cx="16" cy="11" r="4.5" fill="#10B981" class="live-dot" />
-      <text x="30" y="15" fill="#34D399" font-size="11" font-weight="600" class="font-sans">LIVE &amp; AVAILABLE FOR CORE ROLES</text>
-    </g>
-  </g>
-
-  <g transform="translate(32, 108)">
-    <text x="0" y="30" fill="#FFFFFF" font-size="28" font-weight="800" letter-spacing="-0.5" class="font-sans">AKROM FADHIL</text>
-    <text x="225" y="28" fill="#64748B" font-size="15" font-weight="500" class="font-mono">(@Akrmfdhl)</text>
+  <g transform="translate(32, 42)">
+    <text x="0" y="32" fill="#FFFFFF" font-size="30" font-weight="700" letter-spacing="-0.5" class="font-sans">Akrom Fadhil</text>
+    <text x="210" y="30" fill="#64748B" font-size="16" font-weight="500" class="font-mono">(@Akrmfdhl)</text>
     
-    <text x="0" y="56" fill="url(#cyanEmerald)" font-size="15" font-weight="700" class="font-sans">
-      Full Stack &amp; Distributed Systems Engineer • AI Multi-Agent &amp; Quantitative Architect
+    <text x="0" y="64" fill="url(#textGrad)" font-size="16" font-weight="600" class="font-sans">
+      Full Stack Software Engineer
+    </text>
+    <text x="0" y="90" fill="#94A3B8" font-size="13.5" class="font-sans">
+      Building scalable web applications, clean backend APIs, and modern developer tooling.
     </text>
   </g>
 
-  <g transform="translate(32, 190)">
+  <g transform="translate(32, 160)">
     <g transform="translate(0, 0)">
-      <rect width="198" height="64" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="14" y="22" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.5" class="font-mono">FOCUS</text>
-      <text x="14" y="44" fill="#E2E8F0" font-size="12" font-weight="600" class="font-sans">Distributed Backends</text>
+      <rect width="268" height="50" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
+      <text x="16" y="20" fill="#64748B" font-size="10" font-weight="600" class="font-mono">DOMAIN</text>
+      <text x="16" y="37" fill="#E2E8F0" font-size="12" font-weight="500" class="font-sans">Web &amp; Backend Development</text>
     </g>
 
-    <g transform="translate(212, 0)">
-      <rect width="198" height="64" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="14" y="22" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.5" class="font-mono">AI &amp; INTELLIGENCE</text>
-      <text x="14" y="44" fill="#E2E8F0" font-size="12" font-weight="600" class="font-sans">Multi-Agent &amp; Local LLMs</text>
+    <g transform="translate(284, 0)">
+      <rect width="268" height="50" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
+      <text x="16" y="20" fill="#64748B" font-size="10" font-weight="600" class="font-mono">STACK</text>
+      <text x="16" y="37" fill="#E2E8F0" font-size="12" font-weight="500" class="font-sans">TypeScript, React, Node.js, Go</text>
     </g>
 
-    <g transform="translate(424, 0)">
-      <rect width="198" height="64" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="14" y="22" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.5" class="font-mono">FRONTEND / UX</text>
-      <text x="14" y="44" fill="#E2E8F0" font-size="12" font-weight="600" class="font-sans">React &amp; Pixel-Perfect UI</text>
-    </g>
-
-    <g transform="translate(636, 0)">
-      <rect width="200" height="64" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="14" y="22" fill="#64748B" font-size="10" font-weight="700" letter-spacing="0.5" class="font-mono">LOCATION</text>
-      <text x="14" y="44" fill="#E2E8F0" font-size="12" font-weight="600" class="font-sans">Indonesia (UTC+7)</text>
+    <g transform="translate(568, 0)">
+      <rect width="268" height="50" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
+      <text x="16" y="20" fill="#64748B" font-size="10" font-weight="600" class="font-mono">LOCATION</text>
+      <text x="16" y="37" fill="#E2E8F0" font-size="12" font-weight="500" class="font-sans">Indonesia (UTC+7)</text>
     </g>
   </g>
 </svg>

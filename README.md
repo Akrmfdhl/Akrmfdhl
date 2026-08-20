@@ -4,15 +4,15 @@
 
 <br/>
 
-## 🛠️ Technical Arsenal & Engineering Capabilities
+## Languages and Tools
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/main/assets/tech-matrix.svg" alt="Technical Arsenal Matrix" width="100%" />
+  <img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/main/assets/tech-matrix.svg" alt="Languages and Tools Matrix" width="100%" />
 </div>
 
 <br/>
 
-## 📈 Telemetry & Activity Stats
+## Activity
 
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=Akrmfdhl&theme=dark&hide_border=false&border_radius=8" height="200" alt="Akrom's GitHub Streak" />
@@ -20,7 +20,7 @@
 
 <br/>
 
-## 🎮 Contribution Visualizers
+## Contribution Visualizers
 
 <div align="center">
   <picture>
@@ -42,20 +42,14 @@
 
 <br/>
 
-## 🌐 Connect & Direct Inquiries
+## Connect
 
 <div align="center">
   <a href="mailto:akromfadhil234@gmail.com">
-    <img src="https://img.shields.io/badge/Direct_Email-akromfadhil234%40gmail.com-10B981?style=for-the-badge&logo=gmail&logoColor=white" alt="Direct Email" />
+    <img src="https://img.shields.io/badge/Email-akromfadhil234%40gmail.com-10B981?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
   <a href="https://github.com/Akrmfdhl">
-    <img src="https://img.shields.io/badge/GitHub-Akrmfdhl-0B0F14?style=for-the-badge&logo=github&logoColor=white&borderColor=1E293B" alt="GitHub Profile" />
+    <img src="https://img.shields.io/badge/GitHub-Akrmfdhl-0B0F14?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
   </a>
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/Akrmfdhl/Akrmfdhl/main/assets/terminal-footer.svg" alt="Engineering Manifesto" width="100%" />
 </div>
