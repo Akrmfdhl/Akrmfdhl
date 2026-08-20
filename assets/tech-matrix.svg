@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" width="100%" height="100%">
+  <defs>
+    <linearGradient id="matrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F14" />
+      <stop offset="100%" stop-color="#0D131B" />
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <style>
+      .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .category-title { font-family: ui-monospace, monospace; font-size: 11px; font-weight: 700; fill: #64748B; letter-spacing: 0.8px; }
+      .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11.5px; font-weight: 600; fill: #E2E8F0; }
+    </style>
+  </defs>
+
+  <rect width="900" height="370" rx="14" fill="url(#matrixBg)" stroke="#1E293B" stroke-width="1.5" />
+
+  <g transform="translate(28, 28)">
+    <text x="0" y="0" fill="#10B981" font-size="13" font-weight="700" class="font-mono"># TECHNICAL ARSENAL &amp; CAPABILITIES</text>
+    
+    <g transform="translate(0, 20)">
+      <text x="0" y="16" class="category-title">LANGUAGES &amp; RUNTIMES</text>
+      <g transform="translate(0, 24)">
+        <rect x="0" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
+        <text x="47" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">TypeScript</text>
+
+        <rect x="103" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#FACC15" stroke-width="0.8" />
+        <text x="150" y="17" text-anchor="middle" class="pill-text" fill="#FACC15">JavaScript</text>
+
+        <rect x="206" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#34D399" stroke-width="0.8" />
+        <text x="243" y="17" text-anchor="middle" class="pill-text" fill="#34D399">Python</text>
+
+        <rect x="289" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#00ADD8" stroke-width="0.8" />
+        <text x="336" y="17" text-anchor="middle" class="pill-text" fill="#00ADD8">Go (Golang)</text>
+
+        <rect x="392" y="0" width="60" height="26" rx="6" fill="url(#badgeGrad)" stroke="#818CF8" stroke-width="0.8" />
+        <text x="422" y="17" text-anchor="middle" class="pill-text" fill="#818CF8">PHP</text>
+
+        <rect x="460" y="0" width="55" height="26" rx="6" fill="url(#badgeGrad)" stroke="#F43F5E" stroke-width="0.8" />
+        <text x="487" y="17" text-anchor="middle" class="pill-text" fill="#F43F5E">SQL</text>
+
+        <rect x="523" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#FB923C" stroke-width="0.8" />
+        <text x="570" y="17" text-anchor="middle" class="pill-text" fill="#FB923C">HTML5 / CSS3</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 92)">
+      <text x="0" y="16" class="category-title">FRONTEND &amp; UI ENGINEERING</text>
+      <g transform="translate(0, 24)">
+        <rect x="0" y="0" width="65" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
+        <text x="32" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">React</text>
+
+        <rect x="73" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#E2E8F0" stroke-width="0.8" />
+        <text x="110" y="17" text-anchor="middle" class="pill-text" fill="#FFFFFF">Next.js</text>
+
+        <rect x="156" y="0" width="105" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
+        <text x="208" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">Tailwind CSS</text>
+
+        <rect x="269" y="0" width="55" height="26" rx="6" fill="url(#badgeGrad)" stroke="#A855F7" stroke-width="0.8" />
+        <text x="296" y="17" text-anchor="middle" class="pill-text" fill="#A855F7">Vite</text>
+
+        <rect x="332" y="0" width="115" height="26" rx="6" fill="url(#badgeGrad)" stroke="#EC4899" stroke-width="0.8" />
+        <text x="389" y="17" text-anchor="middle" class="pill-text" fill="#EC4899">Framer Motion</text>
+
+        <rect x="455" y="0" width="80" height="26" rx="6" fill="url(#badgeGrad)" stroke="#22D3EE" stroke-width="0.8" />
+        <text x="495" y="17" text-anchor="middle" class="pill-text" fill="#22D3EE">Recharts</text>
+
+        <rect x="543" y="0" width="155" height="26" rx="6" fill="url(#badgeGrad)" stroke="#10B981" stroke-width="0.8" />
+        <text x="620" y="17" text-anchor="middle" class="pill-text" fill="#10B981">Pixel-Perfect UI / Figma</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 164)">
+      <text x="0" y="16" class="category-title">BACKEND, SYSTEMS &amp; DISTRIBUTED QUEUES</text>
+      <g transform="translate(0, 24)">
+        <rect x="0" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#22C55E" stroke-width="0.8" />
+        <text x="37" y="17" text-anchor="middle" class="pill-text" fill="#22C55E">Node.js</text>
+
+        <rect x="83" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#94A3B8" stroke-width="0.8" />
+        <text x="120" y="17" text-anchor="middle" class="pill-text" fill="#F1F5F9">Express</text>
+
+        <rect x="166" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#059669" stroke-width="0.8" />
+        <text x="203" y="17" text-anchor="middle" class="pill-text" fill="#34D399">FastAPI</text>
+
+        <rect x="249" y="0" width="105" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
+        <text x="301" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">Prisma ORM</text>
+
+        <rect x="362" y="0" width="145" height="26" rx="6" fill="url(#badgeGrad)" stroke="#EF4444" stroke-width="0.8" />
+        <text x="434" y="17" text-anchor="middle" class="pill-text" fill="#F87171">BullMQ (Job Queues)</text>
+
+        <rect x="515" y="0" width="150" height="26" rx="6" fill="url(#badgeGrad)" stroke="#F59E0B" stroke-width="0.8" />
+        <text x="590" y="17" text-anchor="middle" class="pill-text" fill="#FBBF24">Socket.IO WebSockets</text>
+      </g>
+    </g>
+
+    <g transform="translate(0, 236)">
+      <text x="0" y="16" class="category-title">AI, MULTI-AGENT, DATABASES &amp; DEVOPS</text>
+      <g transform="translate(0, 24)">
+        <rect x="0" y="0" width="150" height="26" rx="6" fill="url(#badgeGrad)" stroke="#A855F7" stroke-width="0.8" />
+        <text x="75" y="17" text-anchor="middle" class="pill-text" fill="#C084FC">Multi-Agent Systems</text>
+
+        <rect x="158" y="0" width="130" height="26" rx="6" fill="url(#badgeGrad)" stroke="#60A5FA" stroke-width="0.8" />
+        <text x="223" y="17" text-anchor="middle" class="pill-text" fill="#93C5FD">Gemini SDK / ADK</text>
+
+        <rect x="296" y="0" width="165" height="26" rx="6" fill="url(#badgeGrad)" stroke="#818CF8" stroke-width="0.8" />
+        <text x="378" y="17" text-anchor="middle" class="pill-text" fill="#A5B4FC">Local LLMs (LM Studio)</text>
+
+        <rect x="469" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
+        <text x="516" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">PostgreSQL</text>
+
+        <rect x="572" y="0" width="60" height="26" rx="6" fill="url(#badgeGrad)" stroke="#EF4444" stroke-width="0.8" />
+        <text x="602" y="17" text-anchor="middle" class="pill-text" fill="#F87171">Redis</text>
+
+        <rect x="640" y="0" width="70" height="26" rx="6" fill="url(#badgeGrad)" stroke="#22D3EE" stroke-width="0.8" />
+        <text x="675" y="17" text-anchor="middle" class="pill-text" fill="#22D3EE">Docker</text>
+
+        <rect x="718" y="0" width="125" height="26" rx="6" fill="url(#badgeGrad)" stroke="#10B981" stroke-width="0.8" />
+        <text x="780" y="17" text-anchor="middle" class="pill-text" fill="#10B981">CI/CD Actions</text>
+      </g>
+    </g>
+  </g>
+</svg>
