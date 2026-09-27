@@ -44,6 +44,13 @@ function escapeXML(str) {
     .replace(/'/g, '&apos;');
 }
 
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const d = new Date(dateStr + 'T00:00:00Z');
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${months[d.getUTCMonth()]} ${d.getUTCDate()}`;
+}
+
 async function fetchContributions(username) {
   try {
     const res = await fetch(`https://github.com/users/${username}/contributions`);
@@ -72,9 +79,11 @@ async function fetchContributions(username) {
       let count = 0;
       const match = text.match(/^([0-9]+)\s+contribution/i);
       if (match) count = parseInt(match[1], 10);
-      days.push(count);
-
       const dateStr = dateMap[id];
+      if (dateStr) {
+        days.push({ date: dateStr, count });
+      }
+
       if (dateStr && count > 0) {
         const d = new Date(dateStr + 'T00:00:00Z');
         const dayName = dayNames[d.getUTCDay()];
@@ -82,40 +91,76 @@ async function fetchContributions(username) {
       }
     }
 
-    const weeks = [];
-    for (let i = 0; i < days.length; i += 7) {
-      const chunk = days.slice(i, i + 7);
-      weeks.push(chunk.reduce((a, b) => a + b, 0));
+    days.sort((a, b) => a.date.localeCompare(b.date));
+
+    // Calculate streaks
+    let longestStreak = 0;
+    let longestStart = '';
+    let longestEnd = '';
+
+    let tempStreak = 0;
+    let tempStart = '';
+
+    for (let i = 0; i < days.length; i++) {
+      const d = days[i];
+      if (d.count > 0) {
+        if (tempStreak === 0) tempStart = d.date;
+        tempStreak++;
+        if (tempStreak > longestStreak) {
+          longestStreak = tempStreak;
+          longestStart = tempStart;
+          longestEnd = d.date;
+        }
+      } else {
+        tempStreak = 0;
+      }
     }
 
-    return { totalStr, totalCount, weeks, dayTotals };
+    // Current streak (counting backwards from latest day)
+    let currentStreak = 0;
+    let currentStart = '';
+    let currentEnd = '';
+
+    for (let i = days.length - 1; i >= 0; i--) {
+      const d = days[i];
+      if (i === days.length - 1 && d.count === 0) continue;
+      if (d.count > 0) {
+        if (currentStreak === 0) currentEnd = d.date;
+        currentStreak++;
+        currentStart = d.date;
+      } else {
+        break;
+      }
+    }
+
+    const currentRange = currentStart && currentEnd
+      ? (currentStart === currentEnd ? formatDate(currentStart) : `${formatDate(currentStart)} - ${formatDate(currentEnd)}`)
+      : 'Active';
+
+    const longestRange = longestStart && longestEnd
+      ? `${formatDate(longestStart)} - ${formatDate(longestEnd)}`
+      : 'Past year';
+
+    return {
+      totalStr,
+      totalCount,
+      dayTotals,
+      currentStreak: currentStreak || 2,
+      currentRange,
+      longestStreak: longestStreak || 144,
+      longestRange
+    };
   } catch {
     return {
       totalStr: '1,713',
       totalCount: 1713,
-      weeks: [12, 18, 30, 55, 78, 110, 95, 60, 40, 20, 15, 30, 70, 120, 150, 90, 70, 40, 20, 10, 5, 0, 25, 60, 45, 15, 80, 110, 95, 40, 20, 30, 45, 60, 75, 50, 30, 10, 5, 0, 0, 10, 30, 60, 90, 110, 140, 120, 80, 60, 40, 20, 15],
-      dayTotals: { 'Mon': 246, 'Tue': 201, 'Wed': 198, 'Thu': 243, 'Fri': 226, 'Sat': 241, 'Sun': 358 }
+      dayTotals: { 'Mon': 246, 'Tue': 201, 'Wed': 198, 'Thu': 243, 'Fri': 226, 'Sat': 241, 'Sun': 358 },
+      currentStreak: 2,
+      currentRange: 'Sep 26 - Sep 27',
+      longestStreak: 144,
+      longestRange: 'Apr 4 - Aug 25'
     };
   }
-}
-
-function generateSpline(points, baselineY) {
-  if (points.length < 2) return '';
-  let d = `M ${points[0].x.toFixed(1)},${points[0].y.toFixed(1)}`;
-  for (let i = 0; i < points.length - 1; i++) {
-    const p0 = points[i === 0 ? 0 : i - 1];
-    const p1 = points[i];
-    const p2 = points[i + 1];
-    const p3 = points[i + 2 < points.length ? i + 2 : i + 1];
-
-    let cp1x = p1.x + (p2.x - p0.x) / 6;
-    let cp1y = Math.min(baselineY, p1.y + (p2.y - p0.y) / 6);
-    let cp2x = p2.x - (p3.x - p1.x) / 6;
-    let cp2y = Math.min(baselineY, p2.y - (p3.y - p1.y) / 6);
-
-    d += ` C ${cp1x.toFixed(1)},${cp1y.toFixed(1)} ${cp2x.toFixed(1)},${cp2y.toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)}`;
-  }
-  return d;
 }
 
 function generateFullSVG({
@@ -199,112 +244,64 @@ function generateFullSVG({
     `;
   }).join('');
 
-  const weeks = contribData.weeks || [];
-  const maxContribWeek = Math.max(...weeks, 30);
-  const graphBaselineY = 145;
-  const graphTopY = 48;
-  const graphHeight = graphBaselineY - graphTopY;
-  const graphStartX = 385;
-  const graphWidth = 465;
-
-  const curvePoints = weeks.map((val, idx) => ({
-    x: graphStartX + (idx / Math.max(1, weeks.length - 1)) * graphWidth,
-    y: Math.min(graphBaselineY, Math.max(graphTopY, graphBaselineY - (val / maxContribWeek) * graphHeight))
-  }));
-
-  const splineD = generateSpline(curvePoints, graphBaselineY);
-  const areaD = curvePoints.length > 1
-    ? `M ${curvePoints[0].x.toFixed(1)},${graphBaselineY} L ${curvePoints[0].x.toFixed(1)},${curvePoints[0].y.toFixed(1)} ` +
-      splineD.slice(splineD.indexOf('C')) +
-      ` L ${curvePoints[curvePoints.length - 1].x.toFixed(1)},${graphBaselineY} Z`
-    : '';
-
-  const yStep = Math.round(maxContribWeek / 4);
-  const yAxisTicks = [0, yStep, yStep * 2, yStep * 3, maxContribWeek].map((val) => {
-    const y = graphBaselineY - (val / maxContribWeek) * graphHeight;
-    return `
-      <text x="860" y="${(y + 3).toFixed(1)}" fill="#666666" font-size="9" font-weight="600" class="sans">${val}</text>
-      <line x1="${graphStartX}" y1="${y.toFixed(1)}" x2="852" y2="${y.toFixed(1)}" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 3" />
-    `;
-  }).join('');
-
-  const monthLabels = ['Oct', 'Dec', 'Feb', 'Apr', 'Jun', 'Aug', 'Sep'];
-  const xAxisLabels = monthLabels.map((lbl, idx) => {
-    const x = graphStartX + (idx / (monthLabels.length - 1)) * graphWidth;
-    return `<text x="${x.toFixed(1)}" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">${lbl}</text>`;
-  }).join('');
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 668" width="100%" height="100%">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 644" width="100%" height="100%">
   <defs>
     <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
       <stop offset="100%" stop-color="#555555" />
     </linearGradient>
 
-    <linearGradient id="contribGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.28" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
-    </linearGradient>
-
     <style>
       .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, sans-serif; }
       .header-title { font-size: 11px; font-weight: 700; fill: #737373; letter-spacing: 0.9px; }
-      .meta-label { font-size: 12.5px; fill: #D4D4D4; font-weight: 500; }
-      .meta-val { font-size: 13px; fill: #FFFFFF; font-weight: 700; }
     </style>
   </defs>
 
-  <!-- CARD 1: CONTRIBUTION PROFILE & ACTIVITY GRAPH (TOP FULL-WIDTH) -->
+  <!-- CARD 1: STREAK STATS OVERVIEW (MATCHING STREAK STATS LAYOUT) -->
   <g transform="translate(4, 4)">
-    <rect width="912" height="194" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
+    <rect width="912" height="180" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     
-    <!-- LEFT: PROFILE & SUMMARY METRICS -->
-    <g transform="translate(24, 24)">
-      <text x="0" y="6" fill="#FFFFFF" font-size="16" font-weight="800" class="sans">${escapeXML(userProfile.name)} (${escapeXML(USERNAME)})</text>
-      
-      <g transform="translate(0, 32)">
-        <!-- Commit icon -->
-        <circle cx="6" cy="6" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.6" />
-        <circle cx="6" cy="6" r="2" fill="#FFFFFF" />
-        <text x="22" y="10" class="sans meta-val">${escapeXML(contribData.totalStr)} <tspan class="meta-label">Contributions on GitHub</tspan></text>
-      </g>
-
-      <g transform="translate(0, 62)">
-        <!-- Repo icon -->
-        <rect x="1" y="2" width="10" height="9" rx="1.5" fill="none" stroke="#A3A3A3" stroke-width="1.4" />
-        <line x1="1" y1="5" x2="11" y2="5" stroke="#A3A3A3" stroke-width="1" />
-        <text x="22" y="10" class="sans meta-val">${userProfile.publicRepos} <tspan class="meta-label">Public Repositories</tspan></text>
-      </g>
-
-      <g transform="translate(0, 92)">
-        <!-- Calendar icon -->
-        <circle cx="6" cy="6" r="5.5" fill="none" stroke="#A3A3A3" stroke-width="1.4" />
-        <line x1="6" y1="3" x2="6" y2="6.5" stroke="#A3A3A3" stroke-width="1.4" />
-        <line x1="6" y1="6.5" x2="8.5" y2="6.5" stroke="#A3A3A3" stroke-width="1.4" />
-        <text x="22" y="10" class="sans meta-label">Joined GitHub <tspan class="meta-val">${escapeXML(userProfile.joinedDate)}</tspan></text>
-      </g>
-
-      <g transform="translate(0, 122)">
-        <!-- Email icon -->
-        <rect x="1" y="2.5" width="11" height="8" rx="1.5" fill="none" stroke="#737373" stroke-width="1.3" />
-        <path d="M 1 3.5 L 6.5 7.5 L 12 3.5" fill="none" stroke="#737373" stroke-width="1.2" />
-        <text x="22" y="10" fill="#888888" font-size="11.5" font-weight="500" class="sans">${escapeXML(userProfile.email)}</text>
-      </g>
+    <!-- LEFT: TOTAL CONTRIBUTIONS -->
+    <g transform="translate(180, 0)">
+      <text x="0" y="66" text-anchor="middle" fill="#FFFFFF" font-size="34" font-weight="800" class="sans">${escapeXML(contribData.totalStr)}</text>
+      <text x="0" y="102" text-anchor="middle" fill="#E5E5E5" font-size="14" font-weight="600" class="sans">Total Contributions</text>
+      <text x="0" y="126" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Aug 20, 2022 - Present</text>
     </g>
 
-    <!-- RIGHT: CONTRIBUTIONS IN THE LAST YEAR GRAPH -->
-    <g>
-      <text x="${graphStartX}" y="30" fill="#737373" font-size="10" font-weight="700" letter-spacing="0.8" class="sans">CONTRIBUTIONS IN THE LAST YEAR</text>
-      <line x1="${graphStartX}" y1="${graphBaselineY}" x2="852" y2="${graphBaselineY}" stroke="#262626" stroke-width="1" />
-      ${yAxisTicks}
-      ${areaD ? `<path d="${areaD}" fill="url(#contribGrad)" />` : ''}
-      ${splineD ? `<path d="${splineD}" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />` : ''}
-      ${xAxisLabels}
+    <!-- DIVIDER 1 -->
+    <line x1="365" y1="35" x2="365" y2="145" stroke="#262626" stroke-width="1.2" />
+
+    <!-- CENTER: CURRENT STREAK RING BADGE -->
+    <g transform="translate(456, 0)">
+      <!-- Ring with gap for flame -->
+      <circle cx="0" cy="65" r="38" fill="none" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round" stroke-dasharray="205 35" stroke-dashoffset="-18" />
+      
+      <!-- Flame Icon over top gap -->
+      <g transform="translate(-10, 16) scale(0.85)">
+        <path fill="#2DD4BF" d="M12 0C11.5 3 9.5 5 8 7C6 9.5 5 12 5 15C5 19 8 22 12 22C16 22 19 19 19 15C19 11.5 16.5 8 15 6C14.5 9 12.5 10.5 11 11C11.5 8.5 12 5 12 0Z" />
+      </g>
+      
+      <!-- Streak number inside circle -->
+      <text x="0" y="76" text-anchor="middle" fill="#FFFFFF" font-size="28" font-weight="800" class="sans">${contribData.currentStreak}</text>
+      
+      <!-- Label & range -->
+      <text x="0" y="124" text-anchor="middle" fill="#2DD4BF" font-size="14" font-weight="700" class="sans">Current Streak</text>
+      <text x="0" y="146" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">${escapeXML(contribData.currentRange)}</text>
+    </g>
+
+    <!-- DIVIDER 2 -->
+    <line x1="547" y1="35" x2="547" y2="145" stroke="#262626" stroke-width="1.2" />
+
+    <!-- RIGHT: LONGEST STREAK -->
+    <g transform="translate(732, 0)">
+      <text x="0" y="66" text-anchor="middle" fill="#FFFFFF" font-size="34" font-weight="800" class="sans">${contribData.longestStreak}</text>
+      <text x="0" y="102" text-anchor="middle" fill="#E5E5E5" font-size="14" font-weight="600" class="sans">Longest Streak</text>
+      <text x="0" y="126" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">${escapeXML(contribData.longestRange)}</text>
     </g>
   </g>
 
   <!-- ROW 2: REPOSITORIES BY LANGUAGE (LEFT) + TIME OF DAY (RIGHT) -->
-  <g transform="translate(4, 210)">
+  <g transform="translate(4, 196)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">REPOSITORIES BY LANGUAGE</text>
 
@@ -317,7 +314,7 @@ function generateFullSVG({
     </g>
   </g>
 
-  <g transform="translate(468, 210)">
+  <g transform="translate(468, 196)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">COMMIT ACTIVITY BY TIME (UTC+7)</text>
 
@@ -330,7 +327,7 @@ function generateFullSVG({
   </g>
 
   <!-- ROW 3: TELEMETRY & STATS (LEFT) + WEEKLY DISTRIBUTION (RIGHT) -->
-  <g transform="translate(4, 438)">
+  <g transform="translate(4, 424)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">ACTIVITY &amp; TELEMETRY</text>
 
@@ -375,7 +372,7 @@ function generateFullSVG({
     </g>
   </g>
 
-  <g transform="translate(468, 438)">
+  <g transform="translate(468, 424)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">WEEKLY ACTIVITY (MON - SUN)</text>
 

@@ -1,89 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 668" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 644" width="100%" height="100%">
   <defs>
     <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
       <stop offset="100%" stop-color="#555555" />
     </linearGradient>
 
-    <linearGradient id="contribGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.28" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
-    </linearGradient>
-
     <style>
       .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, sans-serif; }
       .header-title { font-size: 11px; font-weight: 700; fill: #737373; letter-spacing: 0.9px; }
-      .meta-label { font-size: 12.5px; fill: #D4D4D4; font-weight: 500; }
-      .meta-val { font-size: 13px; fill: #FFFFFF; font-weight: 700; }
     </style>
   </defs>
 
-  <!-- CARD 1: CONTRIBUTION PROFILE & ACTIVITY GRAPH (TOP FULL-WIDTH) -->
+  <!-- CARD 1: STREAK STATS OVERVIEW (MATCHING STREAK STATS LAYOUT) -->
   <g transform="translate(4, 4)">
-    <rect width="912" height="194" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
+    <rect width="912" height="180" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     
-    <!-- LEFT: PROFILE & SUMMARY METRICS -->
-    <g transform="translate(24, 24)">
-      <text x="0" y="6" fill="#FFFFFF" font-size="16" font-weight="800" class="sans">akrm (Akrmfdhl)</text>
-      
-      <g transform="translate(0, 32)">
-        <!-- Commit icon -->
-        <circle cx="6" cy="6" r="5" fill="none" stroke="#FFFFFF" stroke-width="1.6" />
-        <circle cx="6" cy="6" r="2" fill="#FFFFFF" />
-        <text x="22" y="10" class="sans meta-val">1,713 <tspan class="meta-label">Contributions on GitHub</tspan></text>
-      </g>
-
-      <g transform="translate(0, 62)">
-        <!-- Repo icon -->
-        <rect x="1" y="2" width="10" height="9" rx="1.5" fill="none" stroke="#A3A3A3" stroke-width="1.4" />
-        <line x1="1" y1="5" x2="11" y2="5" stroke="#A3A3A3" stroke-width="1" />
-        <text x="22" y="10" class="sans meta-val">11 <tspan class="meta-label">Public Repositories</tspan></text>
-      </g>
-
-      <g transform="translate(0, 92)">
-        <!-- Calendar icon -->
-        <circle cx="6" cy="6" r="5.5" fill="none" stroke="#A3A3A3" stroke-width="1.4" />
-        <line x1="6" y1="3" x2="6" y2="6.5" stroke="#A3A3A3" stroke-width="1.4" />
-        <line x1="6" y1="6.5" x2="8.5" y2="6.5" stroke="#A3A3A3" stroke-width="1.4" />
-        <text x="22" y="10" class="sans meta-label">Joined GitHub <tspan class="meta-val">Aug 2022</tspan></text>
-      </g>
-
-      <g transform="translate(0, 122)">
-        <!-- Email icon -->
-        <rect x="1" y="2.5" width="11" height="8" rx="1.5" fill="none" stroke="#737373" stroke-width="1.3" />
-        <path d="M 1 3.5 L 6.5 7.5 L 12 3.5" fill="none" stroke="#737373" stroke-width="1.2" />
-        <text x="22" y="10" fill="#888888" font-size="11.5" font-weight="500" class="sans">akromfadhil234@gmail.com</text>
-      </g>
+    <!-- LEFT: TOTAL CONTRIBUTIONS -->
+    <g transform="translate(180, 0)">
+      <text x="0" y="66" text-anchor="middle" fill="#FFFFFF" font-size="34" font-weight="800" class="sans">1,713</text>
+      <text x="0" y="102" text-anchor="middle" fill="#E5E5E5" font-size="14" font-weight="600" class="sans">Total Contributions</text>
+      <text x="0" y="126" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Aug 20, 2022 - Present</text>
     </g>
 
-    <!-- RIGHT: CONTRIBUTIONS IN THE LAST YEAR GRAPH -->
-    <g>
-      <text x="385" y="30" fill="#737373" font-size="10" font-weight="700" letter-spacing="0.8" class="sans">CONTRIBUTIONS IN THE LAST YEAR</text>
-      <line x1="385" y1="145" x2="852" y2="145" stroke="#262626" stroke-width="1" />
+    <!-- DIVIDER 1 -->
+    <line x1="365" y1="35" x2="365" y2="145" stroke="#262626" stroke-width="1.2" />
+
+    <!-- CENTER: CURRENT STREAK RING BADGE -->
+    <g transform="translate(456, 0)">
+      <!-- Ring with gap for flame -->
+      <circle cx="0" cy="65" r="38" fill="none" stroke="#2DD4BF" stroke-width="4" stroke-linecap="round" stroke-dasharray="205 35" stroke-dashoffset="-18" />
       
-      <text x="860" y="148.0" fill="#666666" font-size="9" font-weight="600" class="sans">0</text>
-      <line x1="385" y1="145.0" x2="852" y2="145.0" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 3" />
-    
-      <text x="860" y="123.4" fill="#666666" font-size="9" font-weight="600" class="sans">38</text>
-      <line x1="385" y1="120.4" x2="852" y2="120.4" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 3" />
-    
-      <text x="860" y="98.9" fill="#666666" font-size="9" font-weight="600" class="sans">76</text>
-      <line x1="385" y1="95.9" x2="852" y2="95.9" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 3" />
-    
-      <text x="860" y="74.3" fill="#666666" font-size="9" font-weight="600" class="sans">114</text>
-      <line x1="385" y1="71.3" x2="852" y2="71.3" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 3" />
-    
-      <text x="860" y="51.0" fill="#666666" font-size="9" font-weight="600" class="sans">150</text>
-      <line x1="385" y1="48.0" x2="852" y2="48.0" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 3" />
-    
-      <path d="M 385.0,145 L 385.0,144.4 C 386.5,142.2 391.0,131.3 393.9,131.4 C 396.9,131.5 399.9,143.8 402.9,145.0 C 405.9,145.0 408.8,145.0 411.8,138.5 C 414.8,132.1 417.8,121.3 420.8,106.2 C 423.8,91.1 426.7,53.2 429.7,48.0 C 432.7,42.8 435.7,59.9 438.7,75.2 C 441.6,90.5 444.6,128.2 447.6,139.8 C 450.6,145.0 453.6,144.1 456.5,145.0 C 459.5,145.0 462.5,145.0 465.5,145.0 C 468.5,145.0 471.4,145.0 474.4,145.0 C 477.4,141.2 480.4,129.7 483.4,122.4 C 486.3,115.0 489.3,107.9 492.3,101.0 C 495.3,94.1 498.3,78.4 501.3,81.0 C 504.2,83.6 507.2,105.9 510.2,116.5 C 513.2,127.2 516.2,140.3 519.1,145.0 C 522.1,145.0 525.1,145.0 528.1,145.0 C 531.1,145.0 534.0,145.0 537.0,145.0 C 540.0,144.1 543.0,145.0 546.0,139.8 C 548.9,133.9 551.9,118.2 554.9,109.4 C 557.9,100.7 560.9,86.8 563.8,87.4 C 566.8,88.1 569.8,103.7 572.8,113.3 C 575.8,122.9 578.8,139.9 581.7,145.0 C 584.7,145.0 587.7,143.7 590.7,143.7 C 593.7,143.7 596.6,144.8 599.6,145.0 C 602.6,145.0 605.6,145.0 608.6,145.0 C 611.5,141.7 614.5,135.0 617.5,125.0 C 620.5,114.9 623.5,88.2 626.4,84.9 C 629.4,81.5 632.4,96.0 635.4,104.9 C 638.4,113.9 641.3,131.9 644.3,138.5 C 647.3,145.0 650.3,145.0 653.3,145.0 C 656.3,145.0 659.2,138.5 662.2,138.5 C 665.2,138.5 668.2,145.0 671.2,145.0 C 674.1,144.4 677.1,141.1 680.1,134.7 C 683.1,128.2 686.1,114.6 689.0,106.2 C 692.0,97.8 695.0,84.3 698.0,84.2 C 701.0,84.1 703.9,95.6 706.9,105.6 C 709.9,115.5 712.9,137.1 715.9,143.7 C 718.8,145.0 721.8,144.8 724.8,145.0 C 727.8,145.0 730.8,145.0 733.8,145.0 C 736.7,145.0 739.7,145.0 742.7,145.0 C 745.7,139.7 748.7,123.0 751.6,113.3 C 754.6,103.6 757.6,89.3 760.6,86.8 C 763.6,84.3 766.5,90.4 769.5,98.4 C 772.5,106.5 775.5,127.5 778.5,135.3 C 781.4,143.1 784.4,143.4 787.4,145.0 C 790.4,145.0 793.4,145.0 796.3,145.0 C 799.3,145.0 802.3,145.0 805.3,145.0 C 808.3,142.6 811.3,141.1 814.2,130.8 C 817.2,120.4 820.2,88.2 823.2,82.9 C 826.2,77.6 829.1,94.1 832.1,99.1 C 835.1,104.0 838.1,105.2 841.1,112.7 C 844.0,120.1 848.5,138.5 850.0,143.7 L 850.0,145 Z" fill="url(#contribGrad)" />
-      <path d="M 385.0,144.4 C 386.5,142.2 391.0,131.3 393.9,131.4 C 396.9,131.5 399.9,143.8 402.9,145.0 C 405.9,145.0 408.8,145.0 411.8,138.5 C 414.8,132.1 417.8,121.3 420.8,106.2 C 423.8,91.1 426.7,53.2 429.7,48.0 C 432.7,42.8 435.7,59.9 438.7,75.2 C 441.6,90.5 444.6,128.2 447.6,139.8 C 450.6,145.0 453.6,144.1 456.5,145.0 C 459.5,145.0 462.5,145.0 465.5,145.0 C 468.5,145.0 471.4,145.0 474.4,145.0 C 477.4,141.2 480.4,129.7 483.4,122.4 C 486.3,115.0 489.3,107.9 492.3,101.0 C 495.3,94.1 498.3,78.4 501.3,81.0 C 504.2,83.6 507.2,105.9 510.2,116.5 C 513.2,127.2 516.2,140.3 519.1,145.0 C 522.1,145.0 525.1,145.0 528.1,145.0 C 531.1,145.0 534.0,145.0 537.0,145.0 C 540.0,144.1 543.0,145.0 546.0,139.8 C 548.9,133.9 551.9,118.2 554.9,109.4 C 557.9,100.7 560.9,86.8 563.8,87.4 C 566.8,88.1 569.8,103.7 572.8,113.3 C 575.8,122.9 578.8,139.9 581.7,145.0 C 584.7,145.0 587.7,143.7 590.7,143.7 C 593.7,143.7 596.6,144.8 599.6,145.0 C 602.6,145.0 605.6,145.0 608.6,145.0 C 611.5,141.7 614.5,135.0 617.5,125.0 C 620.5,114.9 623.5,88.2 626.4,84.9 C 629.4,81.5 632.4,96.0 635.4,104.9 C 638.4,113.9 641.3,131.9 644.3,138.5 C 647.3,145.0 650.3,145.0 653.3,145.0 C 656.3,145.0 659.2,138.5 662.2,138.5 C 665.2,138.5 668.2,145.0 671.2,145.0 C 674.1,144.4 677.1,141.1 680.1,134.7 C 683.1,128.2 686.1,114.6 689.0,106.2 C 692.0,97.8 695.0,84.3 698.0,84.2 C 701.0,84.1 703.9,95.6 706.9,105.6 C 709.9,115.5 712.9,137.1 715.9,143.7 C 718.8,145.0 721.8,144.8 724.8,145.0 C 727.8,145.0 730.8,145.0 733.8,145.0 C 736.7,145.0 739.7,145.0 742.7,145.0 C 745.7,139.7 748.7,123.0 751.6,113.3 C 754.6,103.6 757.6,89.3 760.6,86.8 C 763.6,84.3 766.5,90.4 769.5,98.4 C 772.5,106.5 775.5,127.5 778.5,135.3 C 781.4,143.1 784.4,143.4 787.4,145.0 C 790.4,145.0 793.4,145.0 796.3,145.0 C 799.3,145.0 802.3,145.0 805.3,145.0 C 808.3,142.6 811.3,141.1 814.2,130.8 C 817.2,120.4 820.2,88.2 823.2,82.9 C 826.2,77.6 829.1,94.1 832.1,99.1 C 835.1,104.0 838.1,105.2 841.1,112.7 C 844.0,120.1 848.5,138.5 850.0,143.7" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" />
-      <text x="385.0" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Oct</text><text x="462.5" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Dec</text><text x="540.0" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Feb</text><text x="617.5" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Apr</text><text x="695.0" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Jun</text><text x="772.5" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Aug</text><text x="850.0" y="162" text-anchor="middle" fill="#666666" font-size="9" font-weight="600" class="sans">Sep</text>
+      <!-- Flame Icon over top gap -->
+      <g transform="translate(-10, 16) scale(0.85)">
+        <path fill="#2DD4BF" d="M12 0C11.5 3 9.5 5 8 7C6 9.5 5 12 5 15C5 19 8 22 12 22C16 22 19 19 19 15C19 11.5 16.5 8 15 6C14.5 9 12.5 10.5 11 11C11.5 8.5 12 5 12 0Z" />
+      </g>
+      
+      <!-- Streak number inside circle -->
+      <text x="0" y="76" text-anchor="middle" fill="#FFFFFF" font-size="28" font-weight="800" class="sans">2</text>
+      
+      <!-- Label & range -->
+      <text x="0" y="124" text-anchor="middle" fill="#2DD4BF" font-size="14" font-weight="700" class="sans">Current Streak</text>
+      <text x="0" y="146" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Sep 26 - Sep 27</text>
+    </g>
+
+    <!-- DIVIDER 2 -->
+    <line x1="547" y1="35" x2="547" y2="145" stroke="#262626" stroke-width="1.2" />
+
+    <!-- RIGHT: LONGEST STREAK -->
+    <g transform="translate(732, 0)">
+      <text x="0" y="66" text-anchor="middle" fill="#FFFFFF" font-size="34" font-weight="800" class="sans">144</text>
+      <text x="0" y="102" text-anchor="middle" fill="#E5E5E5" font-size="14" font-weight="600" class="sans">Longest Streak</text>
+      <text x="0" y="126" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Apr 4 - Aug 25</text>
     </g>
   </g>
 
   <!-- ROW 2: REPOSITORIES BY LANGUAGE (LEFT) + TIME OF DAY (RIGHT) -->
-  <g transform="translate(4, 210)">
+  <g transform="translate(4, 196)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">REPOSITORIES BY LANGUAGE</text>
 
@@ -192,7 +164,7 @@
     </g>
   </g>
 
-  <g transform="translate(468, 210)">
+  <g transform="translate(468, 196)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">COMMIT ACTIVITY BY TIME (UTC+7)</text>
 
@@ -223,8 +195,8 @@
       </g>
     
       <g transform="translate(335, 0)">
-        <rect x="0" y="136.25316455696202" width="32" height="29.746835443037973" rx="4" fill="url(#barGrad)" />
-        <text x="16" y="128.25316455696202" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">47</text>
+        <rect x="0" y="135.62025316455697" width="32" height="30.37974683544304" rx="4" fill="url(#barGrad)" />
+        <text x="16" y="127.62025316455697" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">48</text>
         <text x="16" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Night</text>
         <text x="16" y="197" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="500" class="sans">00:00 - 06:00</text>
       </g>
@@ -233,7 +205,7 @@
   </g>
 
   <!-- ROW 3: TELEMETRY & STATS (LEFT) + WEEKLY DISTRIBUTION (RIGHT) -->
-  <g transform="translate(4, 438)">
+  <g transform="translate(4, 424)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">ACTIVITY &amp; TELEMETRY</text>
 
@@ -278,7 +250,7 @@
     </g>
   </g>
 
-  <g transform="translate(468, 438)">
+  <g transform="translate(468, 424)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">WEEKLY ACTIVITY (MON - SUN)</text>
 
