@@ -1,99 +1,216 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="100%" height="100%">
   <defs>
     <linearGradient id="matrixBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B0F14" />
-      <stop offset="100%" stop-color="#0D131B" />
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#111520" />
     </linearGradient>
-    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1E293B" />
-      <stop offset="100%" stop-color="#111827" />
+
+    <linearGradient id="tileBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2030" />
+      <stop offset="100%" stop-color="#121622" />
     </linearGradient>
+
+    <filter id="softOuter" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="8" dy="10" stdDeviation="12" flood-color="#080B11" flood-opacity="0.9" />
+      <feDropShadow dx="-6" dy="-6" stdDeviation="10" flood-color="#242C3D" flood-opacity="0.45" />
+    </filter>
+
+    <filter id="tileShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="3" dy="4" stdDeviation="3.5" flood-color="#07090F" flood-opacity="0.85" />
+      <feDropShadow dx="-2" dy="-2" stdDeviation="3" flood-color="#232D40" flood-opacity="0.55" />
+    </filter>
+
     <style>
-      .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-      .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-      .category-title { font-family: ui-monospace, monospace; font-size: 11px; font-weight: 700; fill: #64748B; letter-spacing: 0.8px; }
-      .pill-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11.5px; font-weight: 600; fill: #E2E8F0; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, sans-serif; }
+      .cat-label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, sans-serif; font-size: 11px; font-weight: 700; fill: #64748B; letter-spacing: 1.2px; }
+      .tile-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, sans-serif; font-size: 12px; font-weight: 600; fill: #E2E8F0; }
     </style>
   </defs>
 
-  <rect width="900" height="300" rx="12" fill="url(#matrixBg)" stroke="#1E293B" stroke-width="1.2" />
+  <rect x="16" y="14" width="888" height="352" rx="20" fill="url(#matrixBg)" filter="url(#softOuter)" stroke="#1F2839" stroke-width="1.2" />
 
-  <g transform="translate(28, 24)">
-    <g transform="translate(0, 8)">
-      <text x="0" y="16" class="category-title">LANGUAGES</text>
+  <g transform="translate(44, 40)">
+    <g transform="translate(0, 0)">
+      <circle cx="5" cy="8" r="3" fill="#38BDF8" />
+      <text x="16" y="12" class="cat-label">LANGUAGES</text>
+      
       <g transform="translate(0, 24)">
-        <rect x="0" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
-        <text x="47" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">TypeScript</text>
+        <g transform="translate(0, 0)">
+          <rect width="105" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#38BDF8" />
+          <text x="28" y="20.5" class="tile-text">TypeScript</text>
+        </g>
 
-        <rect x="103" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#FACC15" stroke-width="0.8" />
-        <text x="150" y="17" text-anchor="middle" class="pill-text" fill="#FACC15">JavaScript</text>
+        <g transform="translate(117, 0)">
+          <rect width="102" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#FACC15" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#FACC15" />
+          <text x="28" y="20.5" class="tile-text">JavaScript</text>
+        </g>
 
-        <rect x="206" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#34D399" stroke-width="0.8" />
-        <text x="243" y="17" text-anchor="middle" class="pill-text" fill="#34D399">Python</text>
+        <g transform="translate(231, 0)">
+          <rect width="108" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#00ADD8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#00ADD8" />
+          <text x="28" y="20.5" class="tile-text">Go (Golang)</text>
+        </g>
 
-        <rect x="289" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#00ADD8" stroke-width="0.8" />
-        <text x="336" y="17" text-anchor="middle" class="pill-text" fill="#00ADD8">Go (Golang)</text>
+        <g transform="translate(351, 0)">
+          <rect width="82" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#34D399" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#34D399" />
+          <text x="28" y="20.5" class="tile-text">Python</text>
+        </g>
 
-        <rect x="392" y="0" width="60" height="26" rx="6" fill="url(#badgeGrad)" stroke="#818CF8" stroke-width="0.8" />
-        <text x="422" y="17" text-anchor="middle" class="pill-text" fill="#818CF8">PHP</text>
+        <g transform="translate(445, 0)">
+          <rect width="66" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#818CF8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#818CF8" />
+          <text x="28" y="20.5" class="tile-text">PHP</text>
+        </g>
 
-        <rect x="460" y="0" width="55" height="26" rx="6" fill="url(#badgeGrad)" stroke="#F43F5E" stroke-width="0.8" />
-        <text x="487" y="17" text-anchor="middle" class="pill-text" fill="#F43F5E">SQL</text>
+        <g transform="translate(523, 0)">
+          <rect width="64" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#F43F5E" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#F43F5E" />
+          <text x="28" y="20.5" class="tile-text">SQL</text>
+        </g>
 
-        <rect x="523" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#FB923C" stroke-width="0.8" />
-        <text x="570" y="17" text-anchor="middle" class="pill-text" fill="#FB923C">HTML5 / CSS3</text>
+        <g transform="translate(599, 0)">
+          <rect width="112" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#FB923C" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#FB923C" />
+          <text x="28" y="20.5" class="tile-text">HTML5 / CSS3</text>
+        </g>
       </g>
     </g>
 
-    <g transform="translate(0, 80)">
-      <text x="0" y="16" class="category-title">FRONTEND</text>
+    <g transform="translate(0, 78)">
+      <circle cx="5" cy="8" r="3" fill="#34D399" />
+      <text x="16" y="12" class="cat-label">FRONTEND ECOSYSTEM</text>
+      
       <g transform="translate(0, 24)">
-        <rect x="0" y="0" width="65" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
-        <text x="32" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">React</text>
+        <g transform="translate(0, 0)">
+          <rect width="78" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#38BDF8" />
+          <text x="28" y="20.5" class="tile-text">React</text>
+        </g>
 
-        <rect x="73" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#E2E8F0" stroke-width="0.8" />
-        <text x="110" y="17" text-anchor="middle" class="pill-text" fill="#FFFFFF">Next.js</text>
+        <g transform="translate(90, 0)">
+          <rect width="86" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#FFFFFF" />
+          <text x="28" y="20.5" class="tile-text">Next.js</text>
+        </g>
 
-        <rect x="156" y="0" width="105" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
-        <text x="208" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">Tailwind CSS</text>
+        <g transform="translate(188, 0)">
+          <rect width="114" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#38BDF8" />
+          <text x="28" y="20.5" class="tile-text">Tailwind CSS</text>
+        </g>
 
-        <rect x="269" y="0" width="55" height="26" rx="6" fill="url(#badgeGrad)" stroke="#A855F7" stroke-width="0.8" />
-        <text x="296" y="17" text-anchor="middle" class="pill-text" fill="#A855F7">Vite</text>
+        <g transform="translate(314, 0)">
+          <rect width="68" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#646CFF" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#646CFF" />
+          <text x="28" y="20.5" class="tile-text">Vite</text>
+        </g>
 
-        <rect x="332" y="0" width="115" height="26" rx="6" fill="url(#badgeGrad)" stroke="#EC4899" stroke-width="0.8" />
-        <text x="389" y="17" text-anchor="middle" class="pill-text" fill="#EC4899">Framer Motion</text>
+        <g transform="translate(394, 0)">
+          <rect width="82" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#764ABC" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#764ABC" />
+          <text x="28" y="20.5" class="tile-text">Redux</text>
+        </g>
+
+        <g transform="translate(488, 0)">
+          <rect width="90" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#A855F7" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#A855F7" />
+          <text x="28" y="20.5" class="tile-text">shadcn/ui</text>
+        </g>
       </g>
     </g>
 
-    <g transform="translate(0, 152)">
-      <text x="0" y="16" class="category-title">BACKEND, DATABASE &amp; TOOLS</text>
+    <g transform="translate(0, 156)">
+      <circle cx="5" cy="8" r="3" fill="#818CF8" />
+      <text x="16" y="12" class="cat-label">BACKEND &amp; APIS</text>
+      
       <g transform="translate(0, 24)">
-        <rect x="0" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#22C55E" stroke-width="0.8" />
-        <text x="37" y="17" text-anchor="middle" class="pill-text" fill="#22C55E">Node.js</text>
+        <g transform="translate(0, 0)">
+          <rect width="86" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#22C55E" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#22C55E" />
+          <text x="28" y="20.5" class="tile-text">Node.js</text>
+        </g>
 
-        <rect x="83" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#94A3B8" stroke-width="0.8" />
-        <text x="120" y="17" text-anchor="middle" class="pill-text" fill="#F1F5F9">Express</text>
+        <g transform="translate(98, 0)">
+          <rect width="84" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#E2E8F0" stroke-opacity="0.3" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#94A3B8" />
+          <text x="28" y="20.5" class="tile-text">Express</text>
+        </g>
 
-        <rect x="166" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#059669" stroke-width="0.8" />
-        <text x="203" y="17" text-anchor="middle" class="pill-text" fill="#34D399">FastAPI</text>
+        <g transform="translate(194, 0)">
+          <rect width="98" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#00ADD8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#00ADD8" />
+          <text x="28" y="20.5" class="tile-text">Go Fiber/Gin</text>
+        </g>
 
-        <rect x="249" y="0" width="95" height="26" rx="6" fill="url(#badgeGrad)" stroke="#38BDF8" stroke-width="0.8" />
-        <text x="296" y="17" text-anchor="middle" class="pill-text" fill="#38BDF8">PostgreSQL</text>
+        <g transform="translate(304, 0)">
+          <rect width="98" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#38BDF8" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#38BDF8" />
+          <text x="28" y="20.5" class="tile-text">REST APIs</text>
+        </g>
 
-        <rect x="352" y="0" width="60" height="26" rx="6" fill="url(#badgeGrad)" stroke="#EF4444" stroke-width="0.8" />
-        <text x="382" y="17" text-anchor="middle" class="pill-text" fill="#F87171">Redis</text>
+        <g transform="translate(414, 0)">
+          <rect width="92" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#E535AB" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#E535AB" />
+          <text x="28" y="20.5" class="tile-text">GraphQL</text>
+        </g>
 
-        <rect x="420" y="0" width="70" height="26" rx="6" fill="url(#badgeGrad)" stroke="#22D3EE" stroke-width="0.8" />
-        <text x="455" y="17" text-anchor="middle" class="pill-text" fill="#22D3EE">Docker</text>
+        <g transform="translate(518, 0)">
+          <rect width="76" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#EA284E" stroke-opacity="0.4" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#EA284E" />
+          <text x="28" y="20.5" class="tile-text">NestJS</text>
+        </g>
+      </g>
+    </g>
 
-        <rect x="498" y="0" width="50" height="26" rx="6" fill="url(#badgeGrad)" stroke="#FB923C" stroke-width="0.8" />
-        <text x="523" y="17" text-anchor="middle" class="pill-text" fill="#FB923C">Git</text>
+    <g transform="translate(0, 234)">
+      <circle cx="5" cy="8" r="3" fill="#F43F5E" />
+      <text x="16" y="12" class="cat-label">DATABASES, DEVOPS &amp; TOOLS</text>
+      
+      <g transform="translate(0, 24)">
+        <g transform="translate(0, 0)">
+          <rect width="108" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#336791" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#4169E1" />
+          <text x="28" y="20.5" class="tile-text">PostgreSQL</text>
+        </g>
 
-        <rect x="556" y="0" width="60" height="26" rx="6" fill="url(#badgeGrad)" stroke="#F1F5F9" stroke-width="0.8" />
-        <text x="586" y="17" text-anchor="middle" class="pill-text" fill="#F1F5F9">Linux</text>
+        <g transform="translate(120, 0)">
+          <rect width="96" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#47A248" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#47A248" />
+          <text x="28" y="20.5" class="tile-text">MongoDB</text>
+        </g>
 
-        <rect x="624" y="0" width="75" height="26" rx="6" fill="url(#badgeGrad)" stroke="#FB923C" stroke-width="0.8" />
-        <text x="661" y="17" text-anchor="middle" class="pill-text" fill="#FB923C">Postman</text>
+        <g transform="translate(228, 0)">
+          <rect width="76" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#DC382D" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#DC382D" />
+          <text x="28" y="20.5" class="tile-text">Redis</text>
+        </g>
+
+        <g transform="translate(316, 0)">
+          <rect width="84" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#2496ED" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#2496ED" />
+          <text x="28" y="20.5" class="tile-text">Docker</text>
+        </g>
+
+        <g transform="translate(412, 0)">
+          <rect width="64" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#F05032" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#F05032" />
+          <text x="28" y="20.5" class="tile-text">Git</text>
+        </g>
+
+        <g transform="translate(488, 0)">
+          <rect width="78" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#FCC624" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#FCC624" />
+          <text x="28" y="20.5" class="tile-text">Linux</text>
+        </g>
+
+        <g transform="translate(578, 0)">
+          <rect width="92" height="32" rx="8" fill="url(#tileBg)" filter="url(#tileShadow)" stroke="#007ACC" stroke-opacity="0.5" stroke-width="1" />
+          <circle cx="16" cy="16" r="3" fill="#007ACC" />
+          <text x="28" y="20.5" class="tile-text">VS Code</text>
+        </g>
       </g>
     </g>
   </g>

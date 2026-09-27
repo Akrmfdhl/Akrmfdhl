@@ -1,54 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0B0F14" />
-      <stop offset="100%" stop-color="#0D131B" />
+      <stop offset="0%" stop-color="#141824" />
+      <stop offset="100%" stop-color="#111520" />
     </linearGradient>
-    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A2030" />
+      <stop offset="100%" stop-color="#121622" />
+    </linearGradient>
+
+    <linearGradient id="cyanEmerald" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#38BDF8" />
       <stop offset="100%" stop-color="#34D399" />
     </linearGradient>
-    <linearGradient id="cardGlow" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.4" />
-    </linearGradient>
+
+    <filter id="softOuter" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="8" dy="10" stdDeviation="12" flood-color="#080B11" flood-opacity="0.9" />
+      <feDropShadow dx="-6" dy="-6" stdDeviation="10" flood-color="#242C3D" flood-opacity="0.45" />
+    </filter>
+
+    <filter id="tileOuter" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="4" dy="5" stdDeviation="4.5" flood-color="#07090F" flood-opacity="0.85" />
+      <feDropShadow dx="-2" dy="-2" stdDeviation="3.5" flood-color="#242F42" flood-opacity="0.55" />
+    </filter>
+
     <style>
-      .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
-      .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif; }
     </style>
   </defs>
 
-  <rect width="900" height="240" rx="12" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="1.2" />
+  <rect x="16" y="14" width="888" height="222" rx="20" fill="url(#bgGrad)" filter="url(#softOuter)" stroke="#1F2839" stroke-width="1.2" />
 
-  <g transform="translate(32, 42)">
-    <text x="0" y="32" fill="#FFFFFF" font-size="30" font-weight="700" letter-spacing="-0.5" class="font-sans">Akrom Fadhil</text>
-    <text x="210" y="30" fill="#64748B" font-size="16" font-weight="500" class="font-mono">(@Akrmfdhl)</text>
-    
-    <text x="0" y="64" fill="url(#textGrad)" font-size="16" font-weight="600" class="font-sans">
+  <g transform="translate(48, 42)">
+    <g transform="translate(0, 0)">
+      <circle cx="6" cy="18" r="4.5" fill="#34D399" />
+      <text x="20" y="22" fill="#34D399" font-size="11.5" font-weight="700" class="font-sans" letter-spacing="1">AVAILABLE FOR OPPORTUNITIES</text>
+    </g>
+
+    <text x="0" y="60" fill="#F8FAFC" font-size="34" font-weight="800" letter-spacing="-0.8" class="font-sans">
+      Akrom Fadhil
+    </text>
+    <text x="245" y="58" fill="#64748B" font-size="16" font-weight="600" class="font-sans">
+      (@Akrmfdhl)
+    </text>
+
+    <text x="0" y="88" fill="url(#cyanEmerald)" font-size="16" font-weight="600" class="font-sans">
       Full Stack Software Engineer
     </text>
-    <text x="0" y="90" fill="#94A3B8" font-size="13.5" class="font-sans">
-      Building scalable web applications, clean backend APIs, and modern developer tooling.
+
+    <text x="0" y="110" fill="#94A3B8" font-size="13" font-weight="400" class="font-sans">
+      Architecting resilient web applications, high-performance services, and tactile digital products.
     </text>
   </g>
 
-  <g transform="translate(32, 160)">
+  <g transform="translate(48, 168)">
     <g transform="translate(0, 0)">
-      <rect width="268" height="50" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="16" y="20" fill="#64748B" font-size="10" font-weight="600" class="font-mono">DOMAIN</text>
-      <text x="16" y="37" fill="#E2E8F0" font-size="12" font-weight="500" class="font-sans">Web &amp; Backend Development</text>
+      <rect width="258" height="48" rx="12" fill="url(#pillGrad)" filter="url(#tileOuter)" stroke="#222B3D" stroke-width="1" />
+      <circle cx="18" cy="24" r="3.5" fill="#38BDF8" />
+      <text x="32" y="19" fill="#64748B" font-size="9.5" font-weight="700" class="font-sans" letter-spacing="0.8">DOMAIN</text>
+      <text x="32" y="34" fill="#E2E8F0" font-size="11.5" font-weight="600" class="font-sans">Web &amp; Backend Engineering</text>
     </g>
 
-    <g transform="translate(284, 0)">
-      <rect width="268" height="50" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="16" y="20" fill="#64748B" font-size="10" font-weight="600" class="font-mono">STACK</text>
-      <text x="16" y="37" fill="#E2E8F0" font-size="12" font-weight="500" class="font-sans">TypeScript, React, Node.js, Go</text>
+    <g transform="translate(283, 0)">
+      <rect width="258" height="48" rx="12" fill="url(#pillGrad)" filter="url(#tileOuter)" stroke="#222B3D" stroke-width="1" />
+      <circle cx="18" cy="24" r="3.5" fill="#34D399" />
+      <text x="32" y="19" fill="#64748B" font-size="9.5" font-weight="700" class="font-sans" letter-spacing="0.8">CORE STACK</text>
+      <text x="32" y="34" fill="#E2E8F0" font-size="11.5" font-weight="600" class="font-sans">TypeScript, React, Node.js, Go</text>
     </g>
 
-    <g transform="translate(568, 0)">
-      <rect width="268" height="50" rx="8" fill="url(#cardGlow)" stroke="#1E293B" stroke-width="1" />
-      <text x="16" y="20" fill="#64748B" font-size="10" font-weight="600" class="font-mono">LOCATION</text>
-      <text x="16" y="37" fill="#E2E8F0" font-size="12" font-weight="500" class="font-sans">Indonesia (UTC+7)</text>
+    <g transform="translate(566, 0)">
+      <rect width="258" height="48" rx="12" fill="url(#pillGrad)" filter="url(#tileOuter)" stroke="#222B3D" stroke-width="1" />
+      <circle cx="18" cy="24" r="3.5" fill="#818CF8" />
+      <text x="32" y="19" fill="#64748B" font-size="9.5" font-weight="700" class="font-sans" letter-spacing="0.8">LOCATION</text>
+      <text x="32" y="34" fill="#E2E8F0" font-size="11.5" font-weight="600" class="font-sans">Indonesia (UTC+7)</text>
     </g>
   </g>
 </svg>
