@@ -25,7 +25,7 @@ function formatBytes(bytes) {
   return `${(kb / 1024).toFixed(1)} MB`;
 }
 
-function generateChartSVG(langStats, totalBytes, activityStats) {
+function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, eventTypeStats) {
   const palette = [
     '#FFFFFF',
     '#D1D5DB',
@@ -35,83 +35,123 @@ function generateChartSVG(langStats, totalBytes, activityStats) {
     '#374151'
   ];
 
-  const radius = 56;
-  const circumference = 2 * Math.PI * radius;
-  let accumulatedPercent = 0;
+  const radius = 50;
+  const circumference = 2 * Math.PI * radius; // ~314.16
 
-  const donutSegments = langStats.map((item, index) => {
+  let accumulatedPercent1 = 0;
+  const donutSegments1 = langStats.map((item, index) => {
     const strokeDash = (item.percent / 100) * circumference;
-    const offset = -(accumulatedPercent / 100) * circumference;
-    accumulatedPercent += item.percent;
+    const offset = -(accumulatedPercent1 / 100) * circumference;
+    accumulatedPercent1 += item.percent;
     const color = palette[index % palette.length];
     return `
       <circle
-        cx="106" cy="116" r="${radius}"
+        cx="105" cy="112" r="${radius}"
         fill="none"
         stroke="${color}"
-        stroke-width="22"
+        stroke-width="20"
         stroke-dasharray="${strokeDash.toFixed(2)} ${circumference.toFixed(2)}"
         stroke-dashoffset="${offset.toFixed(2)}"
-        transform="rotate(-90 106 116)"
+        transform="rotate(-90 105 112)"
       />
     `;
   }).join('');
 
-  const legendItems = langStats.map((item, index) => {
+  const legendItems1 = langStats.map((item, index) => {
     const color = palette[index % palette.length];
-    const yPos = 24 + index * 28;
+    const yPos = 20 + index * 27;
     return `
-      <g transform="translate(216, ${yPos})">
+      <g transform="translate(212, ${yPos})">
         <rect width="8" height="8" rx="2" fill="${color}" y="2" />
-        <text x="16" y="10" fill="#EDEDED" font-size="11.5" font-weight="600" class="sans">${item.name}</text>
-        <text x="172" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
+        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${item.name}</text>
+        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
       </g>
     `;
   }).join('');
 
-  const maxActivityPercent = Math.max(...activityStats.map(a => a.percent), 1);
-  const chartHeight = 100;
-  const baselineY = 168;
+  const maxDiurnalPercent = Math.max(...diurnalStats.map(a => a.percent), 1);
+  const diurnalBaselineY = 156;
+  const diurnalChartHeight = 88;
 
-  const verticalBars = activityStats.map((item, index) => {
+  const diurnalBars = diurnalStats.map((item, index) => {
     const barWidth = 46;
-    const xPos = 42 + index * 94;
-    const barHeight = Math.max(8, Math.round((item.percent / maxActivityPercent) * chartHeight));
-    const barY = baselineY - barHeight;
+    const xPos = 40 + index * 98;
+    const barHeight = Math.max(8, Math.round((item.percent / maxDiurnalPercent) * diurnalChartHeight));
+    const barY = diurnalBaselineY - barHeight;
 
     return `
       <g>
-        <line x1="${xPos}" y1="${baselineY}" x2="${xPos + barWidth}" y2="${baselineY}" stroke="#333333" stroke-width="1" />
-        <rect x="${xPos}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="5" fill="url(#barGrad)" />
-        <text x="${xPos + barWidth / 2}" y="${barY - 8}" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">${item.percent.toFixed(1)}%</text>
-        <text x="${xPos + barWidth / 2}" y="${baselineY + 18}" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">${item.shortLabel}</text>
-        <text x="${xPos + barWidth / 2}" y="${baselineY + 31}" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">${item.timeRange}</text>
+        <line x1="${xPos}" y1="${diurnalBaselineY}" x2="${xPos + barWidth}" y2="${diurnalBaselineY}" stroke="#333333" stroke-width="1" />
+        <rect x="${xPos}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4" fill="url(#barGrad)" />
+        <text x="${xPos + barWidth / 2}" y="${barY - 7}" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">${item.percent.toFixed(1)}%</text>
+        <text x="${xPos + barWidth / 2}" y="${diurnalBaselineY + 17}" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">${item.shortLabel}</text>
+        <text x="${xPos + barWidth / 2}" y="${diurnalBaselineY + 30}" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">${item.timeRange}</text>
       </g>
     `;
   }).join('');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" width="100%" height="100%">
-  <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#060606" />
-      <stop offset="50%" stop-color="#0F0F0F" />
-      <stop offset="100%" stop-color="#070707" />
-    </linearGradient>
+  const maxWeeklyCount = Math.max(...weeklyStats.map(w => w.count), 1);
+  const weeklyBaselineY = 156;
+  const weeklyChartHeight = 88;
 
+  const weeklyBars = weeklyStats.map((item, index) => {
+    const barWidth = 32;
+    const xPos = 26 + index * 56;
+    const barHeight = Math.max(6, Math.round((item.count / maxWeeklyCount) * weeklyChartHeight));
+    const barY = weeklyBaselineY - barHeight;
+
+    return `
+      <g>
+        <line x1="${xPos}" y1="${weeklyBaselineY}" x2="${xPos + barWidth}" y2="${weeklyBaselineY}" stroke="#333333" stroke-width="1" />
+        <rect x="${xPos}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="4" fill="url(#barGrad)" />
+        <text x="${xPos + barWidth / 2}" y="${barY - 7}" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">${item.count}</text>
+        <text x="${xPos + barWidth / 2}" y="${weeklyBaselineY + 17}" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">${item.day}</text>
+        <text x="${xPos + barWidth / 2}" y="${weeklyBaselineY + 30}" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">${item.percent.toFixed(0)}%</text>
+      </g>
+    `;
+  }).join('');
+
+  let accumulatedPercent2 = 0;
+  const donutSegments2 = eventTypeStats.map((item, index) => {
+    const strokeDash = (item.percent / 100) * circumference;
+    const offset = -(accumulatedPercent2 / 100) * circumference;
+    accumulatedPercent2 += item.percent;
+    const color = palette[index % palette.length];
+    return `
+      <circle
+        cx="105" cy="112" r="${radius}"
+        fill="none"
+        stroke="${color}"
+        stroke-width="20"
+        stroke-dasharray="${strokeDash.toFixed(2)} ${circumference.toFixed(2)}"
+        stroke-dashoffset="${offset.toFixed(2)}"
+        transform="rotate(-90 105 112)"
+      />
+    `;
+  }).join('');
+
+  const legendItems2 = eventTypeStats.map((item, index) => {
+    const color = palette[index % palette.length];
+    const yPos = 30 + index * 32;
+    return `
+      <g transform="translate(212, ${yPos})">
+        <rect width="8" height="8" rx="2" fill="${color}" y="2" />
+        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${item.name}</text>
+        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
+      </g>
+    `;
+  }).join('');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 452" width="100%" height="100%">
+  <defs>
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#141414" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.95" />
+      <stop offset="0%" stop-color="#141414" stop-opacity="0.92" />
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.96" />
     </linearGradient>
 
     <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
       <stop offset="100%" stop-color="#555555" />
-    </linearGradient>
-
-    <linearGradient id="topSheen" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#262626" stop-opacity="0.2" />
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#262626" stop-opacity="0.2" />
     </linearGradient>
 
     <style>
@@ -120,31 +160,55 @@ function generateChartSVG(langStats, totalBytes, activityStats) {
     </style>
   </defs>
 
-  <rect width="920" height="280" rx="16" fill="url(#bgGrad)" stroke="#222222" stroke-width="1.2" />
-  <rect x="0" y="0" width="920" height="1.8" fill="url(#topSheen)" />
-
-  <g transform="translate(28, 24)">
-    <rect width="418" height="232" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+  <!-- ROW 1: LANGUAGES (LEFT) + TIME OF DAY (RIGHT) -->
+  <g transform="translate(4, 4)">
+    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">REPOSITORIES BY LANGUAGE</text>
 
-    <g transform="translate(12, 18)">
-      <circle cx="106" cy="116" r="${radius}" fill="none" stroke="#161616" stroke-width="22" />
-      ${donutSegments}
-      <text x="106" y="112" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL CODE</text>
-      <text x="106" y="129" text-anchor="middle" fill="#FFFFFF" font-size="14.5" font-weight="800" class="sans">${formatBytes(totalBytes)}</text>
-      ${legendItems}
+    <g transform="translate(10, 12)">
+      <circle cx="105" cy="112" r="${radius}" fill="none" stroke="#161616" stroke-width="20" />
+      ${donutSegments1}
+      <text x="105" y="108" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL CODE</text>
+      <text x="105" y="125" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800" class="sans">${formatBytes(totalBytes)}</text>
+      ${legendItems1}
     </g>
   </g>
 
-  <g transform="translate(474, 24)">
-    <rect width="418" height="232" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+  <g transform="translate(468, 4)">
+    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">COMMIT ACTIVITY BY TIME (UTC+7)</text>
 
-    <g transform="translate(6, 12)">
-      <line x1="30" y1="68" x2="388" y2="68" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
-      <line x1="30" y1="118" x2="388" y2="118" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
-      <line x1="30" y1="${baselineY}" x2="388" y2="${baselineY}" stroke="#242424" stroke-width="1" />
-      ${verticalBars}
+    <g transform="translate(10, 10)">
+      <line x1="28" y1="68" x2="416" y2="68" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="28" y1="112" x2="416" y2="112" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="28" y1="${diurnalBaselineY}" x2="416" y2="${diurnalBaselineY}" stroke="#242424" stroke-width="1" />
+      ${diurnalBars}
+    </g>
+  </g>
+
+  <!-- ROW 2: WEEKLY DISTRIBUTION (LEFT) + ACTIVITY TYPES (RIGHT) -->
+  <g transform="translate(4, 232)">
+    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <text x="24" y="24" class="sans header-title">WEEKLY ACTIVITY (MON - SUN)</text>
+
+    <g transform="translate(10, 10)">
+      <line x1="20" y1="68" x2="420" y2="68" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="20" y1="112" x2="420" y2="112" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="20" y1="${weeklyBaselineY}" x2="420" y2="${weeklyBaselineY}" stroke="#242424" stroke-width="1" />
+      ${weeklyBars}
+    </g>
+  </g>
+
+  <g transform="translate(468, 232)">
+    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <text x="24" y="24" class="sans header-title">CONTRIBUTION ACTIVITY MIX</text>
+
+    <g transform="translate(10, 12)">
+      <circle cx="105" cy="112" r="${radius}" fill="none" stroke="#161616" stroke-width="20" />
+      ${donutSegments2}
+      <text x="105" y="108" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL EVENTS</text>
+      <text x="105" y="125" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800" class="sans">100+</text>
+      ${legendItems2}
     </g>
   </g>
 </svg>`;
@@ -218,6 +282,18 @@ async function main() {
     'Night': { count: 0, timeRange: '00:00 - 06:00' }
   };
 
+  const dayBuckets = {
+    'Mon': 0, 'Tue': 0, 'Wed': 0, 'Thu': 0, 'Fri': 0, 'Sat': 0, 'Sun': 0
+  };
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  const eventCounts = {
+    'Code Pushes': 0,
+    'Branches & Tags': 0,
+    'Pull Requests': 0,
+    'Collaboration': 0
+  };
+
   let totalEvents = 0;
   for (const ev of events) {
     if (ev.created_at) {
@@ -227,6 +303,15 @@ async function main() {
       else if (hour >= 12 && hour < 18) timeBuckets['Afternoon'].count++;
       else if (hour >= 18 && hour < 24) timeBuckets['Evening'].count++;
       else timeBuckets['Night'].count++;
+
+      const day = dayNames[date.getUTCDay()];
+      dayBuckets[day] = (dayBuckets[day] || 0) + 1;
+
+      if (ev.type === 'PushEvent') eventCounts['Code Pushes']++;
+      else if (ev.type === 'CreateEvent') eventCounts['Branches & Tags']++;
+      else if (ev.type === 'PullRequestEvent') eventCounts['Pull Requests']++;
+      else eventCounts['Collaboration']++;
+
       totalEvents++;
     }
   }
@@ -236,10 +321,21 @@ async function main() {
     timeBuckets['Afternoon'].count = 11;
     timeBuckets['Evening'].count = 3;
     timeBuckets['Night'].count = 12;
-    totalEvents = 32;
+    dayBuckets['Mon'] = 6;
+    dayBuckets['Tue'] = 1;
+    dayBuckets['Wed'] = 3;
+    dayBuckets['Thu'] = 3;
+    dayBuckets['Fri'] = 21;
+    dayBuckets['Sat'] = 21;
+    dayBuckets['Sun'] = 27;
+    eventCounts['Code Pushes'] = 58;
+    eventCounts['Branches & Tags'] = 12;
+    eventCounts['Pull Requests'] = 8;
+    eventCounts['Collaboration'] = 4;
+    totalEvents = 82;
   }
 
-  const activityStats = Object.entries(timeBuckets).map(([shortLabel, info]) => ({
+  const diurnalStats = Object.entries(timeBuckets).map(([shortLabel, info]) => ({
     label: `${shortLabel} (${info.timeRange})`,
     shortLabel,
     timeRange: info.timeRange,
@@ -247,7 +343,21 @@ async function main() {
     percent: (info.count / totalEvents) * 100
   }));
 
-  const svgContent = generateChartSVG(sortedLangs, totalBytes, activityStats);
+  const totalWeekly = Object.values(dayBuckets).reduce((a, b) => a + b, 0) || 1;
+  const weeklyStats = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => ({
+    day,
+    count: dayBuckets[day],
+    percent: (dayBuckets[day] / totalWeekly) * 100
+  }));
+
+  const totalEventMix = Object.values(eventCounts).reduce((a, b) => a + b, 0) || 1;
+  const eventTypeStats = Object.entries(eventCounts).map(([name, count]) => ({
+    name,
+    count,
+    percent: (count / totalEventMix) * 100
+  }));
+
+  const svgContent = generateChartSVG(sortedLangs, totalBytes, diurnalStats, weeklyStats, eventTypeStats);
   const assetsDir = path.resolve('assets');
   if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir, { recursive: true });
 
