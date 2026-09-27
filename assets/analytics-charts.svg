@@ -82,7 +82,7 @@
     </g>
   </g>
 
-  <!-- ROW 2: LANGUAGES (LEFT) + TIME OF DAY (RIGHT) -->
+  <!-- ROW 2: REPOSITORIES BY LANGUAGE (LEFT) + TIME OF DAY (RIGHT) -->
   <g transform="translate(4, 210)">
     <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">REPOSITORIES BY LANGUAGE</text>
@@ -95,7 +95,7 @@
         fill="none"
         stroke="#FFFFFF"
         stroke-width="20"
-        stroke-dasharray="141.74 314.16"
+        stroke-dasharray="137.44 314.16"
         stroke-dashoffset="0.00"
         transform="rotate(-90 105 112)"
       />
@@ -105,8 +105,8 @@
         fill="none"
         stroke="#D1D5DB"
         stroke-width="20"
-        stroke-dasharray="54.99 314.16"
-        stroke-dashoffset="-141.74"
+        stroke-dasharray="39.27 314.16"
+        stroke-dashoffset="-137.44"
         transform="rotate(-90 105 112)"
       />
     
@@ -115,8 +115,8 @@
         fill="none"
         stroke="#9CA3AF"
         stroke-width="20"
-        stroke-dasharray="49.19 314.16"
-        stroke-dashoffset="-196.74"
+        stroke-dasharray="39.27 314.16"
+        stroke-dashoffset="-176.71"
         transform="rotate(-90 105 112)"
       />
     
@@ -125,8 +125,8 @@
         fill="none"
         stroke="#6B7280"
         stroke-width="20"
-        stroke-dasharray="33.44 314.16"
-        stroke-dashoffset="-245.93"
+        stroke-dasharray="39.27 314.16"
+        stroke-dashoffset="-215.98"
         transform="rotate(-90 105 112)"
       />
     
@@ -135,8 +135,8 @@
         fill="none"
         stroke="#4B5563"
         stroke-width="20"
-        stroke-dasharray="17.38 314.16"
-        stroke-dashoffset="-279.37"
+        stroke-dasharray="19.63 314.16"
+        stroke-dashoffset="-255.25"
         transform="rotate(-90 105 112)"
       />
     
@@ -145,48 +145,48 @@
         fill="none"
         stroke="#374151"
         stroke-width="20"
-        stroke-dasharray="13.75 314.16"
-        stroke-dashoffset="-296.75"
+        stroke-dasharray="19.63 314.16"
+        stroke-dashoffset="-274.89"
         transform="rotate(-90 105 112)"
       />
     
-      <text x="105" y="108" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL CODE</text>
-      <text x="105" y="125" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800" class="sans">2.6 MB</text>
+      <text x="105" y="108" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL REPOS</text>
+      <text x="105" y="125" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800" class="sans">17</text>
       
       <g transform="translate(230, 40)">
         <circle cx="6" cy="6" r="4" fill="#FFFFFF" />
         <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">TypeScript</text>
-        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">45.1%</text>
+        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">7 repos (43.8%)</text>
       </g>
     
       <g transform="translate(230, 64)">
         <circle cx="6" cy="6" r="4" fill="#D1D5DB" />
-        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">Blade</text>
-        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">17.5%</text>
+        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">JavaScript</text>
+        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">2 repos (12.5%)</text>
       </g>
     
       <g transform="translate(230, 88)">
         <circle cx="6" cy="6" r="4" fill="#9CA3AF" />
-        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">Go</text>
-        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">15.7%</text>
+        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">CSS</text>
+        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">2 repos (12.5%)</text>
       </g>
     
       <g transform="translate(230, 112)">
         <circle cx="6" cy="6" r="4" fill="#6B7280" />
-        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">PHP</text>
-        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">10.6%</text>
+        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">Blade</text>
+        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">2 repos (12.5%)</text>
       </g>
     
       <g transform="translate(230, 136)">
         <circle cx="6" cy="6" r="4" fill="#4B5563" />
-        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">CSS</text>
-        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">5.5%</text>
+        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">Python</text>
+        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">1 repo (6.3%)</text>
       </g>
     
       <g transform="translate(230, 160)">
         <circle cx="6" cy="6" r="4" fill="#374151" />
-        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">JavaScript</text>
-        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">4.4%</text>
+        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">PHP</text>
+        <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">1 repo (6.3%)</text>
       </g>
     
     </g>
@@ -202,29 +202,29 @@
       <line x1="28" y1="166" x2="416" y2="166" stroke="#262626" stroke-width="1" />
       
       <g transform="translate(50, 0)">
-        <rect x="0" y="128.5" width="32" height="37.5" rx="4" fill="url(#barGrad)" />
-        <text x="16" y="120.5" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">6</text>
+        <rect x="0" y="132.45569620253164" width="32" height="33.54430379746836" rx="4" fill="url(#barGrad)" />
+        <text x="16" y="124.45569620253164" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">53</text>
         <text x="16" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Morning</text>
         <text x="16" y="197" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="500" class="sans">06:00 - 12:00</text>
       </g>
     
       <g transform="translate(145, 0)">
-        <rect x="0" y="97.25" width="32" height="68.75" rx="4" fill="url(#barGrad)" />
-        <text x="16" y="89.25" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">11</text>
+        <rect x="0" y="122.9620253164557" width="32" height="43.037974683544306" rx="4" fill="url(#barGrad)" />
+        <text x="16" y="114.9620253164557" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">68</text>
         <text x="16" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Afternoon</text>
         <text x="16" y="197" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="500" class="sans">12:00 - 18:00</text>
       </g>
     
       <g transform="translate(240, 0)">
-        <rect x="0" y="147.25" width="32" height="18.75" rx="4" fill="url(#barGrad)" />
-        <text x="16" y="139.25" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">3</text>
+        <rect x="0" y="66" width="32" height="100" rx="4" fill="url(#barGrad)" />
+        <text x="16" y="58" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">158</text>
         <text x="16" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Evening</text>
         <text x="16" y="197" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="500" class="sans">18:00 - 00:00</text>
       </g>
     
       <g transform="translate(335, 0)">
-        <rect x="0" y="66" width="32" height="100" rx="4" fill="url(#barGrad)" />
-        <text x="16" y="58" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">16</text>
+        <rect x="0" y="136.25316455696202" width="32" height="29.746835443037973" rx="4" fill="url(#barGrad)" />
+        <text x="16" y="128.25316455696202" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">47</text>
         <text x="16" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Night</text>
         <text x="16" y="197" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="500" class="sans">00:00 - 06:00</text>
       </g>
@@ -268,7 +268,7 @@
       <g transform="translate(0, 112)">
         <rect x="2" y="2" width="9" height="8" rx="1.5" fill="none" stroke="#D4D4D4" stroke-width="1.3" />
         <text x="22" y="10" fill="#999999" font-size="12" font-weight="500" class="sans">Contributed To:</text>
-        <text x="145" y="10" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">11 repos</text>
+        <text x="145" y="10" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">17 repos</text>
       </g>
     </g>
 
@@ -288,44 +288,44 @@
       <line x1="20" y1="166" x2="420" y2="166" stroke="#262626" stroke-width="1" />
       
       <g transform="translate(32, 0)">
-        <rect x="0" y="159.75" width="24" height="6.25" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="152.75" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">1</text>
+        <rect x="0" y="97.28491620111731" width="24" height="68.71508379888269" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="90.28491620111731" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">246</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Mon</text>
       </g>
     
       <g transform="translate(88, 0)">
-        <rect x="0" y="160" width="24" height="6" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="153" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">0</text>
+        <rect x="0" y="109.85474860335196" width="24" height="56.14525139664804" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="102.85474860335196" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">201</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Tue</text>
       </g>
     
       <g transform="translate(144, 0)">
-        <rect x="0" y="147.25" width="24" height="18.75" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="140.25" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">3</text>
+        <rect x="0" y="110.6927374301676" width="24" height="55.3072625698324" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="103.6927374301676" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">198</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Wed</text>
       </g>
     
       <g transform="translate(200, 0)">
-        <rect x="0" y="160" width="24" height="6" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="153" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">0</text>
+        <rect x="0" y="98.12290502793296" width="24" height="67.87709497206704" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="91.12290502793296" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">243</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Thu</text>
       </g>
     
       <g transform="translate(256, 0)">
-        <rect x="0" y="109.75" width="24" height="56.25" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="102.75" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">9</text>
+        <rect x="0" y="102.87150837988827" width="24" height="63.128491620111724" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="95.87150837988827" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">226</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Fri</text>
       </g>
     
       <g transform="translate(312, 0)">
-        <rect x="0" y="66" width="24" height="100" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="59" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">16</text>
+        <rect x="0" y="98.68156424581005" width="24" height="67.31843575418995" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="91.68156424581005" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">241</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Sat</text>
       </g>
     
       <g transform="translate(368, 0)">
-        <rect x="0" y="122.25" width="24" height="43.75" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="115.25" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">7</text>
+        <rect x="0" y="66" width="24" height="100" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="59" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">358</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Sun</text>
       </g>
     
