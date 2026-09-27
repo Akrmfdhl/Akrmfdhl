@@ -133,13 +133,13 @@ function generateFullSVG({
     `;
   }).join('');
 
-  const legendItems1 = langStats.slice(0, 5).map((item, index) => {
-    const y = 50 + index * 26;
+  const legendItems1 = langStats.slice(0, 6).map((item, index) => {
+    const y = 40 + index * 24;
     const color = palette[index % palette.length];
     return `
       <g transform="translate(230, ${y})">
         <circle cx="6" cy="6" r="4" fill="${color}" />
-        <text x="18" y="10" fill="#E5E5E5" font-size="12" font-weight="600" class="sans">${escapeXML(item.name)}</text>
+        <text x="18" y="10" fill="#E5E5E5" font-size="11.5" font-weight="600" class="sans">${escapeXML(item.name)}</text>
         <text x="180" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="500" class="sans">${item.percent.toFixed(1)}%</text>
       </g>
     `;
@@ -456,11 +456,30 @@ async function main() {
     }
   }
 
+  const LANGUAGE_DISPLAY_NAMES = {
+    'PLpgSQL': 'PostgreSQL',
+    'PostgreSQL': 'PostgreSQL',
+    'Blade': 'Blade',
+    'TypeScript': 'TypeScript',
+    'JavaScript': 'JavaScript',
+    'Python': 'Python',
+    'Go': 'Go',
+    'PHP': 'PHP',
+    'CSS': 'CSS',
+    'SCSS': 'SCSS',
+    'Solidity': 'Solidity',
+    'Vue': 'Vue',
+    'Rust': 'Rust',
+    'C++': 'C++',
+    'C': 'C'
+  };
+
   const IGNORED_LANGS = new Set(['MDX', 'HTML', 'Shell', 'Makefile', 'CMake', 'Batchfile', 'Dockerfile']);
   const filteredLangTotals = {};
   for (const [lang, bytes] of Object.entries(langTotals)) {
     if (!IGNORED_LANGS.has(lang)) {
-      filteredLangTotals[lang] = bytes;
+      const displayName = LANGUAGE_DISPLAY_NAMES[lang] || lang;
+      filteredLangTotals[displayName] = (filteredLangTotals[displayName] || 0) + bytes;
     }
   }
   const filteredTotalBytes = Object.values(filteredLangTotals).reduce((a, b) => a + b, 0) || totalBytes;
