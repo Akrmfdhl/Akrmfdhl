@@ -35,8 +35,8 @@ function generateChartSVG(langStats, totalBytes, activityStats) {
     '#374151'
   ];
 
-  const radius = 54;
-  const circumference = 2 * Math.PI * radius; // ~339.292
+  const radius = 56;
+  const circumference = 2 * Math.PI * radius;
   let accumulatedPercent = 0;
 
   const donutSegments = langStats.map((item, index) => {
@@ -46,53 +46,66 @@ function generateChartSVG(langStats, totalBytes, activityStats) {
     const color = palette[index % palette.length];
     return `
       <circle
-        cx="110" cy="110" r="${radius}"
+        cx="106" cy="116" r="${radius}"
         fill="none"
         stroke="${color}"
-        stroke-width="20"
+        stroke-width="22"
         stroke-dasharray="${strokeDash.toFixed(2)} ${circumference.toFixed(2)}"
         stroke-dashoffset="${offset.toFixed(2)}"
-        transform="rotate(-90 110 110)"
+        transform="rotate(-90 106 116)"
       />
     `;
   }).join('');
 
   const legendItems = langStats.map((item, index) => {
     const color = palette[index % palette.length];
-    const yPos = 20 + index * 25;
+    const yPos = 24 + index * 28;
     return `
-      <g transform="translate(230, ${yPos})">
-        <rect width="9" height="9" rx="2.5" fill="${color}" />
-        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${item.name}</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">${item.percent.toFixed(1)}%</text>
+      <g transform="translate(216, ${yPos})">
+        <rect width="8" height="8" rx="2" fill="${color}" y="2" />
+        <text x="16" y="10" fill="#EDEDED" font-size="11.5" font-weight="600" class="sans">${item.name}</text>
+        <text x="172" y="10" text-anchor="end" fill="#999999" font-size="11" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
       </g>
     `;
   }).join('');
 
-  const activityBars = activityStats.map((item, index) => {
-    const yPos = 30 + index * 32;
-    const barWidth = Math.max(4, Math.round((item.percent / 100) * 220));
+  const maxActivityPercent = Math.max(...activityStats.map(a => a.percent), 1);
+  const chartHeight = 100;
+  const baselineY = 168;
+
+  const verticalBars = activityStats.map((item, index) => {
+    const barWidth = 46;
+    const xPos = 42 + index * 94;
+    const barHeight = Math.max(8, Math.round((item.percent / maxActivityPercent) * chartHeight));
+    const barY = baselineY - barHeight;
+
     return `
-      <g transform="translate(0, ${yPos})">
-        <text x="0" y="11" fill="#CCCCCC" font-size="11.5" font-weight="500" class="sans">${item.label}</text>
-        <rect x="140" y="2" width="220" height="12" rx="6" fill="#141414" stroke="#222222" stroke-width="0.8" />
-        <rect x="140" y="2" width="${barWidth}" height="12" rx="6" fill="#EDEDED" />
-        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
+      <g>
+        <line x1="${xPos}" y1="${baselineY}" x2="${xPos + barWidth}" y2="${baselineY}" stroke="#333333" stroke-width="1" />
+        <rect x="${xPos}" y="${barY}" width="${barWidth}" height="${barHeight}" rx="5" fill="url(#barGrad)" />
+        <text x="${xPos + barWidth / 2}" y="${barY - 8}" text-anchor="middle" fill="#FFFFFF" font-size="11.5" font-weight="700" class="sans">${item.percent.toFixed(1)}%</text>
+        <text x="${xPos + barWidth / 2}" y="${baselineY + 18}" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">${item.shortLabel}</text>
+        <text x="${xPos + barWidth / 2}" y="${baselineY + 31}" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">${item.timeRange}</text>
       </g>
     `;
   }).join('');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" width="100%" height="100%">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 280" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#060606" />
-      <stop offset="50%" stop-color="#101010" />
-      <stop offset="100%" stop-color="#080808" />
+      <stop offset="50%" stop-color="#0F0F0F" />
+      <stop offset="100%" stop-color="#070707" />
     </linearGradient>
 
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#121212" stop-opacity="0.8" />
-      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.9" />
+      <stop offset="0%" stop-color="#141414" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.95" />
+    </linearGradient>
+
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#555555" />
     </linearGradient>
 
     <linearGradient id="topSheen" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -103,42 +116,43 @@ function generateChartSVG(langStats, totalBytes, activityStats) {
 
     <style>
       .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Roboto, Helvetica, sans-serif; }
-      .title { font-size: 11px; font-weight: 700; fill: #666666; letter-spacing: 0.8px; }
+      .header-title { font-size: 11px; font-weight: 700; fill: #737373; letter-spacing: 0.9px; }
     </style>
   </defs>
 
-  <rect width="920" height="250" rx="16" fill="url(#bgGrad)" stroke="#222222" stroke-width="1.2" />
+  <rect width="920" height="280" rx="16" fill="url(#bgGrad)" stroke="#222222" stroke-width="1.2" />
   <rect x="0" y="0" width="920" height="1.8" fill="url(#topSheen)" />
 
-  <g transform="translate(36, 26)">
-    <rect width="400" height="196" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
-    <text x="24" y="24" class="sans title">REPOSITORIES BY LANGUAGE</text>
+  <g transform="translate(28, 24)">
+    <rect width="418" height="232" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <text x="24" y="24" class="sans header-title">REPOSITORIES BY LANGUAGE</text>
 
-    <g transform="translate(16, 32)">
-      <circle cx="110" cy="110" r="${radius}" fill="none" stroke="#161616" stroke-width="22" />
+    <g transform="translate(12, 18)">
+      <circle cx="106" cy="116" r="${radius}" fill="none" stroke="#161616" stroke-width="22" />
       ${donutSegments}
-      <text x="110" y="106" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" class="sans">${formatBytes(totalBytes)}</text>
-      <text x="110" y="122" text-anchor="middle" fill="#666666" font-size="9.5" font-weight="600" class="sans">CODE TOTAL</text>
+      <text x="106" y="112" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL CODE</text>
+      <text x="106" y="129" text-anchor="middle" fill="#FFFFFF" font-size="14.5" font-weight="800" class="sans">${formatBytes(totalBytes)}</text>
       ${legendItems}
     </g>
   </g>
 
-  <g transform="translate(484, 26)">
-    <rect width="400" height="196" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
-    <text x="24" y="24" class="sans title">COMMIT ACTIVITY TIME (UTC+7)</text>
+  <g transform="translate(474, 24)">
+    <rect width="418" height="232" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <text x="24" y="24" class="sans header-title">COMMIT ACTIVITY BY TIME (UTC+7)</text>
 
-    <g transform="translate(24, 40)">
-      ${activityBars}
+    <g transform="translate(6, 12)">
+      <line x1="30" y1="68" x2="388" y2="68" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="30" y1="118" x2="388" y2="118" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="30" y1="${baselineY}" x2="388" y2="${baselineY}" stroke="#242424" stroke-width="1" />
+      ${verticalBars}
     </g>
   </g>
 </svg>`;
 }
 
 async function main() {
-  let user = { public_repos: 8 };
   let repos = [];
   try {
-    user = await fetchJSON(`https://api.github.com/users/${USERNAME}`);
     let page = 1;
     while (true) {
       const endpoint = GITHUB_TOKEN
@@ -186,6 +200,7 @@ async function main() {
     .map(([name, bytes]) => ({
       name,
       bytes,
+      formatted: formatBytes(bytes),
       percent: (bytes / filteredTotalBytes) * 100
     }));
 
@@ -197,10 +212,10 @@ async function main() {
   }
 
   const timeBuckets = {
-    'Morning (06 - 12)': 0,
-    'Afternoon (12 - 18)': 0,
-    'Evening (18 - 00)': 0,
-    'Night (00 - 06)': 0,
+    'Morning': { count: 0, timeRange: '06:00 - 12:00' },
+    'Afternoon': { count: 0, timeRange: '12:00 - 18:00' },
+    'Evening': { count: 0, timeRange: '18:00 - 00:00' },
+    'Night': { count: 0, timeRange: '00:00 - 06:00' }
   };
 
   let totalEvents = 0;
@@ -208,26 +223,28 @@ async function main() {
     if (ev.created_at) {
       const date = new Date(ev.created_at);
       const hour = (date.getUTCHours() + 7) % 24;
-      if (hour >= 6 && hour < 12) timeBuckets['Morning (06 - 12)']++;
-      else if (hour >= 12 && hour < 18) timeBuckets['Afternoon (12 - 18)']++;
-      else if (hour >= 18 && hour < 24) timeBuckets['Evening (18 - 00)']++;
-      else timeBuckets['Night (00 - 06)']++;
+      if (hour >= 6 && hour < 12) timeBuckets['Morning'].count++;
+      else if (hour >= 12 && hour < 18) timeBuckets['Afternoon'].count++;
+      else if (hour >= 18 && hour < 24) timeBuckets['Evening'].count++;
+      else timeBuckets['Night'].count++;
       totalEvents++;
     }
   }
 
   if (totalEvents === 0) {
-    timeBuckets['Morning (06 - 12)'] = 4;
-    timeBuckets['Afternoon (12 - 18)'] = 3;
-    timeBuckets['Evening (18 - 00)'] = 2;
-    timeBuckets['Night (00 - 06)'] = 0;
-    totalEvents = 9;
+    timeBuckets['Morning'].count = 6;
+    timeBuckets['Afternoon'].count = 11;
+    timeBuckets['Evening'].count = 3;
+    timeBuckets['Night'].count = 12;
+    totalEvents = 32;
   }
 
-  const activityStats = Object.entries(timeBuckets).map(([label, count]) => ({
-    label,
-    count,
-    percent: (count / totalEvents) * 100
+  const activityStats = Object.entries(timeBuckets).map(([shortLabel, info]) => ({
+    label: `${shortLabel} (${info.timeRange})`,
+    shortLabel,
+    timeRange: info.timeRange,
+    count: info.count,
+    percent: (info.count / totalEvents) * 100
   }));
 
   const svgContent = generateChartSVG(sortedLangs, totalBytes, activityStats);
@@ -253,6 +270,6 @@ async function main() {
   fs.writeFileSync(readmePath, readme, 'utf8');
 }
 
-main().catch(err => {
+main().catch(() => {
   process.exit(1);
 });
