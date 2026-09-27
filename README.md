@@ -61,30 +61,9 @@
 
 ### Analytics
 
-<!-- START_SECTION:analytics -->
-```text
-[ REAL-TIME REPOSITORY CODE BREAKDOWN ]
-TypeScript     █████████░░░░░░░░░░░  46.5% (   1.1 MB)
-Blade          ████░░░░░░░░░░░░░░░░  19.0% ( 471.0 KB)
-Go             ██░░░░░░░░░░░░░░░░░░  11.7% ( 290.0 KB)
-PHP            ██░░░░░░░░░░░░░░░░░░  11.5% ( 286.4 KB)
-CSS            █░░░░░░░░░░░░░░░░░░░   5.4% ( 132.9 KB)
-JavaScript     █░░░░░░░░░░░░░░░░░░░   2.5% (  62.5 KB)
-
-[ PRODUCTIVE TIME DISTRIBUTION (UTC+7) ]
-Morning   (06:00 - 12:00)  ████░░░░░░░░░░░░░░░░  18.8%
-Afternoon (12:00 - 18:00)  ███████░░░░░░░░░░░░░  34.4%
-Evening   (18:00 - 00:00)  ██░░░░░░░░░░░░░░░░░░   9.4%
-Night     (00:00 - 06:00)  ████████░░░░░░░░░░░░  37.5%
-
-[ REPOSITORY OVERVIEW ]
-Public Repositories : 11
-Stargazers Earned   : 0
-Forks Received      : 3
-Followers           : 4
-Account Age         : Since Aug 2022
-```
-<!-- END_SECTION:analytics -->
+<div align="center">
+  <img src="assets/analytics-charts.svg" alt="GitHub Analytics" width="100%" />
+</div>
 
 ---
 
