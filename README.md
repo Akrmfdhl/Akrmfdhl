@@ -63,23 +63,26 @@
 
 <!-- START_SECTION:analytics -->
 ```text
-[ REPOSITORY LANGUAGE DISTRIBUTION ]
-PHP            ████████████████████  68.2% (138.8 MB)
-TypeScript     ████░░░░░░░░░░░░░░░░  16.4% (3.2 MB)
-CSS / HTML     ███░░░░░░░░░░░░░░░░░  12.1% (2.4 MB)
-Blade          █░░░░░░░░░░░░░░░░░░░   3.3% (636.0 KB)
+[ REAL-TIME REPOSITORY CODE BREAKDOWN ]
+TypeScript     █████████░░░░░░░░░░░  46.5% (   1.1 MB)
+Blade          ████░░░░░░░░░░░░░░░░  19.0% ( 471.0 KB)
+Go             ██░░░░░░░░░░░░░░░░░░  11.7% ( 290.0 KB)
+PHP            ██░░░░░░░░░░░░░░░░░░  11.5% ( 286.4 KB)
+CSS            █░░░░░░░░░░░░░░░░░░░   5.4% ( 132.9 KB)
+JavaScript     █░░░░░░░░░░░░░░░░░░░   2.5% (  62.5 KB)
 
 [ PRODUCTIVE TIME DISTRIBUTION (UTC+7) ]
-Morning   (06:00 - 12:00)  ██████████████░░░░░░  44.4%
-Afternoon (12:00 - 18:00)  ████████████░░░░░░░░  33.3%
-Evening   (18:00 - 00:00)  ███████░░░░░░░░░░░░░  22.3%
-Night     (00:00 - 06:00)  ░░░░░░░░░░░░░░░░░░░░   0.0%
+Morning   (06:00 - 12:00)  ████░░░░░░░░░░░░░░░░  18.8%
+Afternoon (12:00 - 18:00)  ███████░░░░░░░░░░░░░  34.4%
+Evening   (18:00 - 00:00)  ██░░░░░░░░░░░░░░░░░░   9.4%
+Night     (00:00 - 06:00)  ████████░░░░░░░░░░░░  37.5%
 
-[ PROFILE SNAPSHOT ]
-Public Repositories : 8
-Primary Languages   : TypeScript, PHP, Go
-Timezone            : Asia/Jakarta (UTC+7)
-Status              : Active Committer
+[ REPOSITORY OVERVIEW ]
+Public Repositories : 11
+Stargazers Earned   : 0
+Forks Received      : 3
+Followers           : 4
+Account Age         : Since Aug 2022
 ```
 <!-- END_SECTION:analytics -->
 
