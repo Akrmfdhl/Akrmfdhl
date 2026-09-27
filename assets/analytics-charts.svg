@@ -38,7 +38,7 @@
         fill="none"
         stroke="#FFFFFF"
         stroke-width="20"
-        stroke-dasharray="261.21 339.29"
+        stroke-dasharray="153.94 339.29"
         stroke-dashoffset="0.00"
         transform="rotate(-90 110 110)"
       />
@@ -48,8 +48,8 @@
         fill="none"
         stroke="#D1D5DB"
         stroke-width="20"
-        stroke-dasharray="45.66 339.29"
-        stroke-dashoffset="-261.21"
+        stroke-dasharray="59.73 339.29"
+        stroke-dashoffset="-153.94"
         transform="rotate(-90 110 110)"
       />
     
@@ -58,8 +58,8 @@
         fill="none"
         stroke="#9CA3AF"
         stroke-width="20"
-        stroke-dasharray="10.76 339.29"
-        stroke-dashoffset="-306.87"
+        stroke-dasharray="53.43 339.29"
+        stroke-dashoffset="-213.67"
         transform="rotate(-90 110 110)"
       />
     
@@ -68,8 +68,8 @@
         fill="none"
         stroke="#6B7280"
         stroke-width="20"
-        stroke-dasharray="7.72 339.29"
-        stroke-dashoffset="-317.63"
+        stroke-dasharray="36.32 339.29"
+        stroke-dashoffset="-267.09"
         transform="rotate(-90 110 110)"
       />
     
@@ -78,8 +78,8 @@
         fill="none"
         stroke="#4B5563"
         stroke-width="20"
-        stroke-dasharray="5.84 339.29"
-        stroke-dashoffset="-325.35"
+        stroke-dasharray="18.88 339.29"
+        stroke-dashoffset="-303.41"
         transform="rotate(-90 110 110)"
       />
     
@@ -88,48 +88,48 @@
         fill="none"
         stroke="#374151"
         stroke-width="20"
-        stroke-dasharray="4.60 339.29"
-        stroke-dashoffset="-331.20"
+        stroke-dasharray="13.03 339.29"
+        stroke-dashoffset="-322.28"
         transform="rotate(-90 110 110)"
       />
     
-      <text x="110" y="106" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" class="sans">199.2 MB</text>
+      <text x="110" y="106" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="700" class="sans">2.8 MB</text>
       <text x="110" y="122" text-anchor="middle" fill="#666666" font-size="9.5" font-weight="600" class="sans">CODE TOTAL</text>
       
       <g transform="translate(230, 20)">
         <rect width="9" height="9" rx="2.5" fill="#FFFFFF" />
         <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">TypeScript</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">77.0%</text>
+        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">45.4%</text>
       </g>
     
       <g transform="translate(230, 45)">
         <rect width="9" height="9" rx="2.5" fill="#D1D5DB" />
-        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">JavaScript</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">13.5%</text>
+        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Blade</text>
+        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">17.6%</text>
       </g>
     
       <g transform="translate(230, 70)">
         <rect width="9" height="9" rx="2.5" fill="#9CA3AF" />
-        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">CSS</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">3.2%</text>
+        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Go</text>
+        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">15.7%</text>
       </g>
     
       <g transform="translate(230, 95)">
         <rect width="9" height="9" rx="2.5" fill="#6B7280" />
-        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Go</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">2.3%</text>
+        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">PHP</text>
+        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">10.7%</text>
       </g>
     
       <g transform="translate(230, 120)">
         <rect width="9" height="9" rx="2.5" fill="#4B5563" />
-        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">PLpgSQL</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">1.7%</text>
+        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">CSS</text>
+        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">5.6%</text>
       </g>
     
       <g transform="translate(230, 145)">
         <rect width="9" height="9" rx="2.5" fill="#374151" />
-        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Python</text>
-        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">1.4%</text>
+        <text x="16" y="8.5" fill="#EDEDED" font-size="11" font-weight="600" class="sans">JavaScript</text>
+        <text x="155" y="8.5" text-anchor="end" fill="#888888" font-size="10.5" font-weight="500" class="sans">3.8%</text>
       </g>
     
     </g>
@@ -144,29 +144,29 @@
       <g transform="translate(0, 30)">
         <text x="0" y="11" fill="#CCCCCC" font-size="11.5" font-weight="500" class="sans">Morning (06 - 12)</text>
         <rect x="140" y="2" width="220" height="12" rx="6" fill="#141414" stroke="#222222" stroke-width="0.8" />
-        <rect x="140" y="2" width="24" height="12" rx="6" fill="#EDEDED" />
-        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">11.1%</text>
+        <rect x="140" y="2" width="37" height="12" rx="6" fill="#EDEDED" />
+        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">16.7%</text>
       </g>
     
       <g transform="translate(0, 62)">
         <text x="0" y="11" fill="#CCCCCC" font-size="11.5" font-weight="500" class="sans">Afternoon (12 - 18)</text>
         <rect x="140" y="2" width="220" height="12" rx="6" fill="#141414" stroke="#222222" stroke-width="0.8" />
-        <rect x="140" y="2" width="30" height="12" rx="6" fill="#EDEDED" />
-        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">13.6%</text>
+        <rect x="140" y="2" width="67" height="12" rx="6" fill="#EDEDED" />
+        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">30.6%</text>
       </g>
     
       <g transform="translate(0, 94)">
         <text x="0" y="11" fill="#CCCCCC" font-size="11.5" font-weight="500" class="sans">Evening (18 - 00)</text>
         <rect x="140" y="2" width="220" height="12" rx="6" fill="#141414" stroke="#222222" stroke-width="0.8" />
-        <rect x="140" y="2" width="100" height="12" rx="6" fill="#EDEDED" />
-        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">45.7%</text>
+        <rect x="140" y="2" width="43" height="12" rx="6" fill="#EDEDED" />
+        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">19.4%</text>
       </g>
     
       <g transform="translate(0, 126)">
         <text x="0" y="11" fill="#CCCCCC" font-size="11.5" font-weight="500" class="sans">Night (00 - 06)</text>
         <rect x="140" y="2" width="220" height="12" rx="6" fill="#141414" stroke="#222222" stroke-width="0.8" />
-        <rect x="140" y="2" width="65" height="12" rx="6" fill="#EDEDED" />
-        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">29.6%</text>
+        <rect x="140" y="2" width="73" height="12" rx="6" fill="#EDEDED" />
+        <text x="375" y="11" fill="#888888" font-size="11" font-weight="600" class="sans">33.3%</text>
       </g>
     
     </g>
