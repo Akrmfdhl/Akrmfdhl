@@ -61,23 +61,27 @@
 
 ### Analytics
 
-<div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Akrmfdhl&theme=github-compact&bg_color=060606&color=FFFFFF&line=FFFFFF&point=FFFFFF&area=true&area_color=181818&hide_border=false&border_color=222222&border_radius=10" width="100%" alt="Contribution Graph" />
-</div>
+<!-- START_SECTION:analytics -->
+```text
+[ REPOSITORY LANGUAGE DISTRIBUTION ]
+PHP            ████████████████████  68.2% (138.8 MB)
+TypeScript     ████░░░░░░░░░░░░░░░░  16.4% (3.2 MB)
+CSS / HTML     ███░░░░░░░░░░░░░░░░░  12.1% (2.4 MB)
+Blade          █░░░░░░░░░░░░░░░░░░░   3.3% (636.0 KB)
 
-<br/>
+[ PRODUCTIVE TIME DISTRIBUTION (UTC+7) ]
+Morning   (06:00 - 12:00)  ██████████████░░░░░░  44.4%
+Afternoon (12:00 - 18:00)  ████████████░░░░░░░░  33.3%
+Evening   (18:00 - 00:00)  ███████░░░░░░░░░░░░░  22.3%
+Night     (00:00 - 06:00)  ░░░░░░░░░░░░░░░░░░░░   0.0%
 
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Akrmfdhl&theme=github_dark" height="180" alt="Top Languages by Repo" />
-  &nbsp;&nbsp;
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Akrmfdhl&theme=github_dark&utcOffset=7" height="180" alt="Commits by Hour" />
-</div>
-
-<br/>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=Akrmfdhl&theme=dark&background=060606&border=222222&stroke=222222&ring=FFFFFF&fire=FFFFFF&currStreakNum=FFFFFF&sideNums=EDEDED&currStreakLabel=FFFFFF&sideLabels=888888&dates=888888&hide_border=false&border_radius=10" height="195" alt="GitHub Streak" />
-</div>
+[ PROFILE SNAPSHOT ]
+Public Repositories : 8
+Primary Languages   : TypeScript, PHP, Go
+Timezone            : Asia/Jakarta (UTC+7)
+Status              : Active Committer
+```
+<!-- END_SECTION:analytics -->
 
 ---
 
