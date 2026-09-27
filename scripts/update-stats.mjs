@@ -139,10 +139,17 @@ async function main() {
   let repos = [];
   try {
     user = await fetchJSON(`https://api.github.com/users/${USERNAME}`);
-    const repoEndpoint = GITHUB_TOKEN
-      ? 'https://api.github.com/user/repos?per_page=100&type=all'
-      : `https://api.github.com/users/${USERNAME}/repos?per_page=100`;
-    repos = await fetchJSON(repoEndpoint);
+    let page = 1;
+    while (true) {
+      const endpoint = GITHUB_TOKEN
+        ? `https://api.github.com/user/repos?per_page=100&page=${page}&type=all`
+        : `https://api.github.com/users/${USERNAME}/repos?per_page=100&page=${page}`;
+      const batch = await fetchJSON(endpoint);
+      if (!Array.isArray(batch) || batch.length === 0) break;
+      repos.push(...batch);
+      if (batch.length < 100) break;
+      page++;
+    }
   } catch {
     repos = [];
   }
