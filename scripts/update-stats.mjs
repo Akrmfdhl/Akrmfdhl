@@ -144,11 +144,6 @@ function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, even
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 452" width="100%" height="100%">
   <defs>
-    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#141414" stop-opacity="0.92" />
-      <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0.96" />
-    </linearGradient>
-
     <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
       <stop offset="100%" stop-color="#555555" />
@@ -162,11 +157,11 @@ function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, even
 
   <!-- ROW 1: LANGUAGES (LEFT) + TIME OF DAY (RIGHT) -->
   <g transform="translate(4, 4)">
-    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">REPOSITORIES BY LANGUAGE</text>
 
     <g transform="translate(10, 12)">
-      <circle cx="105" cy="112" r="${radius}" fill="none" stroke="#161616" stroke-width="20" />
+      <circle cx="105" cy="112" r="${radius}" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="20" />
       ${donutSegments1}
       <text x="105" y="108" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL CODE</text>
       <text x="105" y="125" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800" class="sans">${formatBytes(totalBytes)}</text>
@@ -175,36 +170,36 @@ function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, even
   </g>
 
   <g transform="translate(468, 4)">
-    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">COMMIT ACTIVITY BY TIME (UTC+7)</text>
 
     <g transform="translate(10, 10)">
-      <line x1="28" y1="68" x2="416" y2="68" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
-      <line x1="28" y1="112" x2="416" y2="112" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
-      <line x1="28" y1="${diurnalBaselineY}" x2="416" y2="${diurnalBaselineY}" stroke="#242424" stroke-width="1" />
+      <line x1="28" y1="68" x2="416" y2="68" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="28" y1="112" x2="416" y2="112" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="28" y1="${diurnalBaselineY}" x2="416" y2="${diurnalBaselineY}" stroke="#262626" stroke-width="1" />
       ${diurnalBars}
     </g>
   </g>
 
   <!-- ROW 2: WEEKLY DISTRIBUTION (LEFT) + ACTIVITY TYPES (RIGHT) -->
   <g transform="translate(4, 232)">
-    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">WEEKLY ACTIVITY (MON - SUN)</text>
 
     <g transform="translate(10, 10)">
-      <line x1="20" y1="68" x2="420" y2="68" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
-      <line x1="20" y1="112" x2="420" y2="112" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="3 3" />
-      <line x1="20" y1="${weeklyBaselineY}" x2="420" y2="${weeklyBaselineY}" stroke="#242424" stroke-width="1" />
+      <line x1="20" y1="68" x2="420" y2="68" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="20" y1="112" x2="420" y2="112" stroke="rgba(255, 255, 255, 0.06)" stroke-width="0.8" stroke-dasharray="3 3" />
+      <line x1="20" y1="${weeklyBaselineY}" x2="420" y2="${weeklyBaselineY}" stroke="#262626" stroke-width="1" />
       ${weeklyBars}
     </g>
   </g>
 
   <g transform="translate(468, 232)">
-    <rect width="448" height="216" rx="12" fill="url(#cardGrad)" stroke="#222222" stroke-width="0.8" />
+    <rect width="448" height="216" rx="12" fill="none" stroke="#222222" stroke-width="0.8" />
     <text x="24" y="24" class="sans header-title">CONTRIBUTION ACTIVITY MIX</text>
 
     <g transform="translate(10, 12)">
-      <circle cx="105" cy="112" r="${radius}" fill="none" stroke="#161616" stroke-width="20" />
+      <circle cx="105" cy="112" r="${radius}" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="20" />
       ${donutSegments2}
       <text x="105" y="108" text-anchor="middle" fill="#666666" font-size="8.5" font-weight="700" letter-spacing="1" class="sans">TOTAL EVENTS</text>
       <text x="105" y="125" text-anchor="middle" fill="#FFFFFF" font-size="14" font-weight="800" class="sans">100+</text>
@@ -362,12 +357,13 @@ async function main() {
   if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir, { recursive: true });
 
   fs.writeFileSync(path.join(assetsDir, 'analytics-charts.svg'), svgContent, 'utf8');
+  fs.writeFileSync(path.join(assetsDir, 'analytics.svg'), svgContent, 'utf8');
 
   const readmePath = path.resolve('README.md');
   let readme = fs.readFileSync(readmePath, 'utf8');
 
   const chartBlock = `<div align="center">
-  <img src="assets/analytics-charts.svg" alt="GitHub Analytics" width="100%" />
+  <img src="assets/analytics.svg" alt="GitHub Analytics" width="100%" />
 </div>`;
 
   if (readme.includes('<!-- START_SECTION:analytics -->')) {

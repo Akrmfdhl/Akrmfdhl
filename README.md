@@ -62,7 +62,7 @@
 ### Analytics
 
 <div align="center">
-  <img src="assets/analytics-charts.svg" alt="GitHub Analytics" width="100%" />
+  <img src="assets/analytics.svg" alt="GitHub Analytics" width="100%" />
 </div>
 
 ---
