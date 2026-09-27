@@ -133,7 +133,7 @@
       <g>
         <line x1="40" y1="156" x2="86" y2="156" stroke="#333333" stroke-width="1" />
         <rect x="40" y="135" width="46" height="21" rx="4" fill="url(#barGrad)" />
-        <text x="63" y="128" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">11.0%</text>
+        <text x="63" y="128" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">10.8%</text>
         <text x="63" y="173" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">Morning</text>
         <text x="63" y="186" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">06:00 - 12:00</text>
       </g>
@@ -141,7 +141,7 @@
       <g>
         <line x1="138" y1="156" x2="184" y2="156" stroke="#333333" stroke-width="1" />
         <rect x="138" y="130" width="46" height="26" rx="4" fill="url(#barGrad)" />
-        <text x="161" y="123" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">13.4%</text>
+        <text x="161" y="123" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">13.3%</text>
         <text x="161" y="173" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">Afternoon</text>
         <text x="161" y="186" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">12:00 - 18:00</text>
       </g>
@@ -149,15 +149,15 @@
       <g>
         <line x1="236" y1="156" x2="282" y2="156" stroke="#333333" stroke-width="1" />
         <rect x="236" y="68" width="46" height="88" rx="4" fill="url(#barGrad)" />
-        <text x="259" y="61" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">45.1%</text>
+        <text x="259" y="61" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">44.6%</text>
         <text x="259" y="173" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">Evening</text>
         <text x="259" y="186" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">18:00 - 00:00</text>
       </g>
     
       <g>
         <line x1="334" y1="156" x2="380" y2="156" stroke="#333333" stroke-width="1" />
-        <rect x="334" y="97" width="46" height="59" rx="4" fill="url(#barGrad)" />
-        <text x="357" y="90" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">30.5%</text>
+        <rect x="334" y="94" width="46" height="62" rx="4" fill="url(#barGrad)" />
+        <text x="357" y="87" text-anchor="middle" fill="#FFFFFF" font-size="11" font-weight="700" class="sans">31.3%</text>
         <text x="357" y="173" text-anchor="middle" fill="#D1D5DB" font-size="11" font-weight="600" class="sans">Night</text>
         <text x="357" y="186" text-anchor="middle" fill="#71717A" font-size="9" font-weight="500" class="sans">00:00 - 06:00</text>
       </g>
@@ -177,8 +177,8 @@
       
       <g>
         <line x1="26" y1="156" x2="58" y2="156" stroke="#333333" stroke-width="1" />
-        <rect x="26" y="136" width="32" height="20" rx="4" fill="url(#barGrad)" />
-        <text x="42" y="129" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">6</text>
+        <rect x="26" y="137" width="32" height="19" rx="4" fill="url(#barGrad)" />
+        <text x="42" y="130" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">6</text>
         <text x="42" y="173" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">Mon</text>
         <text x="42" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">7%</text>
       </g>
@@ -193,42 +193,42 @@
     
       <g>
         <line x1="138" y1="156" x2="170" y2="156" stroke="#333333" stroke-width="1" />
-        <rect x="138" y="146" width="32" height="10" rx="4" fill="url(#barGrad)" />
-        <text x="154" y="139" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">3</text>
+        <rect x="138" y="147" width="32" height="9" rx="4" fill="url(#barGrad)" />
+        <text x="154" y="140" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">3</text>
         <text x="154" y="173" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">Wed</text>
         <text x="154" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">4%</text>
       </g>
     
       <g>
         <line x1="194" y1="156" x2="226" y2="156" stroke="#333333" stroke-width="1" />
-        <rect x="194" y="146" width="32" height="10" rx="4" fill="url(#barGrad)" />
-        <text x="210" y="139" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">3</text>
+        <rect x="194" y="147" width="32" height="9" rx="4" fill="url(#barGrad)" />
+        <text x="210" y="140" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">3</text>
         <text x="210" y="173" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">Thu</text>
         <text x="210" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">4%</text>
       </g>
     
       <g>
         <line x1="250" y1="156" x2="282" y2="156" stroke="#333333" stroke-width="1" />
-        <rect x="250" y="88" width="32" height="68" rx="4" fill="url(#barGrad)" />
-        <text x="266" y="81" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">21</text>
+        <rect x="250" y="90" width="32" height="66" rx="4" fill="url(#barGrad)" />
+        <text x="266" y="83" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">21</text>
         <text x="266" y="173" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">Fri</text>
-        <text x="266" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">26%</text>
+        <text x="266" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">25%</text>
       </g>
     
       <g>
         <line x1="306" y1="156" x2="338" y2="156" stroke="#333333" stroke-width="1" />
-        <rect x="306" y="88" width="32" height="68" rx="4" fill="url(#barGrad)" />
-        <text x="322" y="81" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">21</text>
+        <rect x="306" y="90" width="32" height="66" rx="4" fill="url(#barGrad)" />
+        <text x="322" y="83" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">21</text>
         <text x="322" y="173" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">Sat</text>
-        <text x="322" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">26%</text>
+        <text x="322" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">25%</text>
       </g>
     
       <g>
         <line x1="362" y1="156" x2="394" y2="156" stroke="#333333" stroke-width="1" />
         <rect x="362" y="68" width="32" height="88" rx="4" fill="url(#barGrad)" />
-        <text x="378" y="61" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">27</text>
+        <text x="378" y="61" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">28</text>
         <text x="378" y="173" text-anchor="middle" fill="#D1D5DB" font-size="10.5" font-weight="600" class="sans">Sun</text>
-        <text x="378" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">33%</text>
+        <text x="378" y="186" text-anchor="middle" fill="#71717A" font-size="8.5" font-weight="500" class="sans">34%</text>
       </g>
     
     </g>
@@ -246,7 +246,7 @@
         fill="none"
         stroke="#FFFFFF"
         stroke-width="20"
-        stroke-dasharray="222.21 314.16"
+        stroke-dasharray="223.32 314.16"
         stroke-dashoffset="0.00"
         transform="rotate(-90 105 112)"
       />
@@ -256,8 +256,8 @@
         fill="none"
         stroke="#D1D5DB"
         stroke-width="20"
-        stroke-dasharray="45.97 314.16"
-        stroke-dashoffset="-222.21"
+        stroke-dasharray="45.42 314.16"
+        stroke-dashoffset="-223.32"
         transform="rotate(-90 105 112)"
       />
     
@@ -266,8 +266,8 @@
         fill="none"
         stroke="#9CA3AF"
         stroke-width="20"
-        stroke-dasharray="30.65 314.16"
-        stroke-dashoffset="-268.18"
+        stroke-dasharray="30.28 314.16"
+        stroke-dashoffset="-268.74"
         transform="rotate(-90 105 112)"
       />
     
@@ -276,8 +276,8 @@
         fill="none"
         stroke="#6B7280"
         stroke-width="20"
-        stroke-dasharray="15.32 314.16"
-        stroke-dashoffset="-298.83"
+        stroke-dasharray="15.14 314.16"
+        stroke-dashoffset="-299.02"
         transform="rotate(-90 105 112)"
       />
     
@@ -287,25 +287,25 @@
       <g transform="translate(212, 30)">
         <rect width="8" height="8" rx="2" fill="#FFFFFF" y="2" />
         <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Code Pushes</text>
-        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">70.7%</text>
+        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">71.1%</text>
       </g>
     
       <g transform="translate(212, 62)">
         <rect width="8" height="8" rx="2" fill="#D1D5DB" y="2" />
-        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Branches & Tags</text>
-        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">14.6%</text>
+        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Branches &amp; Tags</text>
+        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">14.5%</text>
       </g>
     
       <g transform="translate(212, 94)">
         <rect width="8" height="8" rx="2" fill="#9CA3AF" y="2" />
         <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Pull Requests</text>
-        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">9.8%</text>
+        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">9.6%</text>
       </g>
     
       <g transform="translate(212, 126)">
         <rect width="8" height="8" rx="2" fill="#6B7280" y="2" />
         <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">Collaboration</text>
-        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">4.9%</text>
+        <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">4.8%</text>
       </g>
     
     </g>

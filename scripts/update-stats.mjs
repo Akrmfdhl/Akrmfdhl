@@ -25,6 +25,15 @@ function formatBytes(bytes) {
   return `${(kb / 1024).toFixed(1)} MB`;
 }
 
+function escapeXML(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
 function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, eventTypeStats) {
   const palette = [
     '#FFFFFF',
@@ -63,7 +72,7 @@ function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, even
     return `
       <g transform="translate(212, ${yPos})">
         <rect width="8" height="8" rx="2" fill="${color}" y="2" />
-        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${item.name}</text>
+        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${escapeXML(item.name)}</text>
         <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
       </g>
     `;
@@ -136,7 +145,7 @@ function generateChartSVG(langStats, totalBytes, diurnalStats, weeklyStats, even
     return `
       <g transform="translate(212, ${yPos})">
         <rect width="8" height="8" rx="2" fill="${color}" y="2" />
-        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${item.name}</text>
+        <text x="16" y="10" fill="#EDEDED" font-size="11" font-weight="600" class="sans">${escapeXML(item.name)}</text>
         <text x="175" y="10" text-anchor="end" fill="#999999" font-size="10.5" font-weight="600" class="sans">${item.percent.toFixed(1)}%</text>
       </g>
     `;
