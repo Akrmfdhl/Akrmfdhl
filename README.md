@@ -62,15 +62,21 @@
 ### Analytics
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=Akrmfdhl&theme=dark&background=060606&border=222222&stroke=222222&ring=FFFFFF&fire=FFFFFF&currStreakNum=FFFFFF&sideNums=EDEDED&currStreakLabel=FFFFFF&sideLabels=888888&dates=888888&hide_border=false&border_radius=10" height="195" alt="GitHub Streak" />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Akrmfdhl&theme=github-compact&bg_color=060606&color=FFFFFF&line=FFFFFF&point=FFFFFF&area=true&area_color=181818&hide_border=false&border_color=222222&border_radius=10" width="100%" alt="Contribution Graph" />
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Akrmfdhl&show_icons=true&theme=dark&bg_color=060606&title_color=FFFFFF&text_color=EDEDED&icon_color=FFFFFF&border_color=222222&border_radius=10" height="175" alt="GitHub Stats" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Akrmfdhl&theme=github_dark" height="180" alt="Top Languages by Repo" />
   &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Akrmfdhl&layout=compact&theme=dark&bg_color=060606&title_color=FFFFFF&text_color=EDEDED&border_color=222222&border_radius=10" height="175" alt="Top Languages" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Akrmfdhl&theme=github_dark&utcOffset=7" height="180" alt="Commits by Hour" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://streak-stats.demolab.com?user=Akrmfdhl&theme=dark&background=060606&border=222222&stroke=222222&ring=FFFFFF&fire=FFFFFF&currStreakNum=FFFFFF&sideNums=EDEDED&currStreakLabel=FFFFFF&sideLabels=888888&dates=888888&hide_border=false&border_radius=10" height="195" alt="GitHub Streak" />
 </div>
 
 ---
