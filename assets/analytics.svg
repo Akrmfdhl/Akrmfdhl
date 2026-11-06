@@ -17,7 +17,7 @@
     
     <!-- LEFT: TOTAL CONTRIBUTIONS -->
     <g transform="translate(180, 0)">
-      <text x="0" y="66" text-anchor="middle" fill="#FFFFFF" font-size="34" font-weight="800" class="sans">1,819</text>
+      <text x="0" y="66" text-anchor="middle" fill="#FFFFFF" font-size="34" font-weight="800" class="sans">1,830</text>
       <text x="0" y="102" text-anchor="middle" fill="#E5E5E5" font-size="14" font-weight="600" class="sans">Total Contributions</text>
       <text x="0" y="126" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Aug 20, 2022 - Present</text>
     </g>
@@ -36,11 +36,11 @@
       </g>
       
       <!-- Streak number inside circle -->
-      <text x="0" y="76" text-anchor="middle" fill="#FFFFFF" font-size="28" font-weight="800" class="sans">2</text>
+      <text x="0" y="76" text-anchor="middle" fill="#FFFFFF" font-size="28" font-weight="800" class="sans">1</text>
       
       <!-- Label & range -->
       <text x="0" y="124" text-anchor="middle" fill="#2DD4BF" font-size="14" font-weight="700" class="sans">Current Streak</text>
-      <text x="0" y="146" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Active</text>
+      <text x="0" y="146" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Nov 6</text>
     </g>
 
     <!-- DIVIDER 2 -->
@@ -205,7 +205,7 @@
         <circle cx="6" cy="6" r="4.5" fill="none" stroke="#D4D4D4" stroke-width="1.3" />
         <circle cx="6" cy="6" r="1.8" fill="#FFFFFF" />
         <text x="22" y="10" fill="#999999" font-size="12" font-weight="500" class="sans">Total Commits:</text>
-        <text x="145" y="10" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">1,819</text>
+        <text x="145" y="10" fill="#FFFFFF" font-size="12.5" font-weight="700" class="sans">1,830</text>
       </g>
 
       <g transform="translate(0, 56)">
@@ -244,44 +244,44 @@
       <line x1="20" y1="166" x2="420" y2="166" stroke="#262626" stroke-width="1" />
       
       <g transform="translate(32, 0)">
-        <rect x="0" y="84.69918699186992" width="24" height="81.30081300813008" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="77.69918699186992" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">300</text>
+        <rect x="0" y="84.91891891891892" width="24" height="81.08108108108108" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="77.91891891891892" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">300</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Mon</text>
       </g>
     
       <g transform="translate(88, 0)">
-        <rect x="0" y="108.81842818428184" width="24" height="57.18157181571816" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="101.81842818428184" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">211</text>
+        <rect x="0" y="106.54054054054055" width="24" height="59.45945945945946" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="99.54054054054055" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">220</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Tue</text>
       </g>
     
       <g transform="translate(144, 0)">
-        <rect x="0" y="110.71544715447155" width="24" height="55.28455284552846" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="103.71544715447155" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">204</text>
+        <rect x="0" y="110.86486486486487" width="24" height="55.13513513513514" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="103.86486486486487" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">204</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Wed</text>
       </g>
     
       <g transform="translate(200, 0)">
-        <rect x="0" y="100.14634146341463" width="24" height="65.85365853658537" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="93.14634146341463" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">243</text>
+        <rect x="0" y="100.32432432432432" width="24" height="65.67567567567568" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="93.32432432432432" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">243</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Thu</text>
       </g>
     
       <g transform="translate(256, 0)">
-        <rect x="0" y="100.14634146341463" width="24" height="65.85365853658537" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="93.14634146341463" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">243</text>
+        <rect x="0" y="100.05405405405405" width="24" height="65.94594594594595" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="93.05405405405405" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">244</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Fri</text>
       </g>
     
       <g transform="translate(312, 0)">
-        <rect x="0" y="98.52032520325203" width="24" height="67.47967479674797" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="91.52032520325203" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">249</text>
+        <rect x="0" y="98.70270270270271" width="24" height="67.29729729729729" rx="3" fill="url(#barGrad)" />
+        <text x="12" y="91.70270270270271" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">249</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Sat</text>
       </g>
     
       <g transform="translate(368, 0)">
         <rect x="0" y="66" width="24" height="100" rx="3" fill="url(#barGrad)" />
-        <text x="12" y="59" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">369</text>
+        <text x="12" y="59" text-anchor="middle" fill="#FFFFFF" font-size="10.5" font-weight="700" class="sans">370</text>
         <text x="12" y="184" text-anchor="middle" fill="#CCCCCC" font-size="11" font-weight="600" class="sans">Sun</text>
       </g>
     
