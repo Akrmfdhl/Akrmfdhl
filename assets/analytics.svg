@@ -40,7 +40,7 @@
       
       <!-- Label & range -->
       <text x="0" y="124" text-anchor="middle" fill="#2DD4BF" font-size="14" font-weight="700" class="sans">Current Streak</text>
-      <text x="0" y="146" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Nov 19 - Nov 20</text>
+      <text x="0" y="146" text-anchor="middle" fill="#737373" font-size="12" font-weight="500" class="sans">Active</text>
     </g>
 
     <!-- DIVIDER 2 -->
